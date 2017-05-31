@@ -1,0 +1,53 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	max-height: 150px;
+	max-width: 1600px;
+	background: yellow;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	  
+	-webkit-flex-flow: row wrap;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+header {
+	display: flex;
+}
+.wrapper .logo-container {
+
+  max-width: 700px;
+  max-height: 150px;
+  border: red 1px dashed;/*
+  display: inline-block;*/
+}
+
+.wrapper .logo-container img{
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper .login-container {
+	border: 1px red dashed;
+	width: 200px;
+}
+
+.wrapper .login-container{
+	margin-top: 40px;
+}
+
+.wrapper .login-container .login-form .element-holder{
+	display: inline-block;
+}
+
+.wrapper .login-container .login-form .remind-me{
+	display: block;
+}
