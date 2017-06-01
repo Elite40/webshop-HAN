@@ -25,6 +25,7 @@ html, body {
 header {
 	display: flex;
 	position: relative;
+	height: 150px;	
 }
 .wrapper .logo-container {
   max-width: 500px;
@@ -52,4 +53,9 @@ header {
 
 .wrapper .login-container .login-form .remind-me{
 	display: block;
+}
+
+header > .menu {
+	background: red;
+	order:1;
 }
