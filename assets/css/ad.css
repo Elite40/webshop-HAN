@@ -1,5 +1,10 @@
 .ad-container {
-	
+	display: flex;
+	flex-direction: column;
+	background: blue;
+
+	height: 800px;
+	width: 100px ;
 }
 
 /*@media all and (min-width: 600px) {

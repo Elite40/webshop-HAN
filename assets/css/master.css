@@ -4,7 +4,10 @@ html, body {
 }
 
 .wrapper {
-	max-height: 150px;
+	margin-right: 200px;
+	margin-left: 200px;
+
+	max-height: auto;
 	max-width: 1600px;
 	background: yellow;
 
@@ -21,10 +24,11 @@ html, body {
 
 header {
 	display: flex;
+	position: relative;
 }
 .wrapper .logo-container {
 
-  max-width: 700px;
+  max-width: 500px;
   max-height: 150px;
   border: red 1px dashed;/*
   display: inline-block;*/
@@ -49,5 +53,5 @@ header {
 }
 
 .wrapper .login-container .login-form .remind-me{
-	display: block;
+	display: flex;
 }
