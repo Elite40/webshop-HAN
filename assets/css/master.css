@@ -4,8 +4,8 @@ html, body {
 }
 
 .wrapper {
-	margin-right: 200px;
-	margin-left: 200px;
+	margin-right: 150px;
+	margin-left: 150px;
 
 	max-height: auto;
 	max-width: 1600px;
@@ -19,7 +19,7 @@ html, body {
 	  
 	-webkit-flex-flow: row wrap;
 	justify-content: space-around;
-	flex-direction: column;
+	/*flex-direction: column;*/
 }
 
 header {
@@ -27,7 +27,6 @@ header {
 	position: relative;
 }
 .wrapper .logo-container {
-
   max-width: 500px;
   max-height: 150px;
   border: red 1px dashed;/*
@@ -41,11 +40,10 @@ header {
 
 .wrapper .login-container {
 	border: 1px red dashed;
-	width: 200px;
+	width: 300px;
 }
 
 .wrapper .login-container{
-	margin-top: 40px;
 }
 
 .wrapper .login-container .login-form .element-holder{
@@ -53,5 +51,5 @@ header {
 }
 
 .wrapper .login-container .login-form .remind-me{
-	display: flex;
+	display: block;
 }
