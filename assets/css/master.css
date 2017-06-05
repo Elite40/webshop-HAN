@@ -20,7 +20,7 @@ html, body {
 
 	max-height: auto;
 	width: calc(100% - 350px);
-	background: yellow;
+	/*background: yellow;*/
 }
 
 header {
@@ -174,5 +174,5 @@ nav {
 }
 
 .shop-button:hover {
-	border: 2px solid #fff;
+	border: 1px solid #fff;
 }

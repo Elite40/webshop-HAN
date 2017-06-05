@@ -7,8 +7,9 @@
 
 .product-container {
   /*margin-top: 20px;*/
-  background: green;
+  /*background: green;*/
   display: flex;
+  margin-top: 20px;
 }
 
 .product-information {
@@ -34,26 +35,35 @@
 }
 
 .product-image img {
+  border: 1px solid #d6d6d6;
   width: 100%;
 }
 
 .order-amount {
   /*background: red;*/
-  margin-left: 400px;
+  /*margin-left: 400px;*/
   margin-top: 80px;
 }
 
 
 .recommendation-wrapper {
+  margin-top: 30px;
   display: flex;
 }
 
 .recommended-item {
   margin: 10px;
-  background: red;
-  max-width: 300px;
+  border: 1px solid #ddd;
+  max-width: 250px;
 }
+
+.recommended-item--information {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .recommended-item img {
   width: 100%;
+  height: 150px;
 }
