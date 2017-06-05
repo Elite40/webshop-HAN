@@ -1,0 +1,59 @@
+.product-pagina-container {
+  margin-left: 10px;
+  /*background: red;*/
+  display: flex;
+  flex-direction: column;
+}
+
+.product-container {
+  /*margin-top: 20px;*/
+  background: green;
+  display: flex;
+}
+
+.product-information {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.description {
+  display: flex;
+}
+
+.description p {
+  margin: 0;
+  flex: 3;
+}
+
+.description .in-stock {
+  flex: 1;
+}
+
+.product-image {
+  max-width: 300px;
+}
+
+.product-image img {
+  width: 100%;
+}
+
+.order-amount {
+  /*background: red;*/
+  margin-left: 400px;
+  margin-top: 80px;
+}
+
+
+.recommendation-wrapper {
+  display: flex;
+}
+
+.recommended-item {
+  margin: 10px;
+  background: red;
+  max-width: 300px;
+}
+
+.recommended-item img {
+  width: 100%;
+}

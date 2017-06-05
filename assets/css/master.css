@@ -16,10 +16,10 @@ html, body {
 	display: flex;
 	flex-direction: column;
 
-	margin-left: 200px;
+	margin-left: 100px;
 
 	max-height: auto;
-	width: calc(100% - 550px);
+	width: calc(100% - 350px);
 	background: yellow;
 }
 
@@ -162,4 +162,17 @@ nav {
 	flex-basis: 30%;
 	/*background: blue;*/
 	margin: 0;
+}
+
+.shop-button {
+	width: 140px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background-color: #3498DB;
+	padding: 10px 40px;
+}
+
+.shop-button:hover {
+	border: 2px solid #fff;
 }
