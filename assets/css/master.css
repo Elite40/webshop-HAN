@@ -69,16 +69,20 @@ nav {
 	list-style-type: none;
 	padding: 0;
 	display: flex;
+	flex-flow: row wrap;
+	justify-content:space-between;
 	background: steelblue;
+	align-items: center;
 	padding: 5px;
-
+	min-height: 40px;
 }
 
 .menu > li {
+	position: relative;
 	flex: 1;
-
 	text-align: center;
 	padding: 5px;
+	transition: all linear 0.1s;	
 }
 
 .menu li a {
@@ -88,9 +92,38 @@ nav {
 	display: block;
 }
 
-.menu li a:hover {
-	border-bottom: 1px solid #ccc;
+.menu li:hover {
+	background: rgba(178,208,232,1);
 }
+
+.menu li:hover ul{
+	display: flex;
+	flex-flow: column wrap;
+	position: absolute; 
+	top: 100%; 
+	left: 0; 
+	width: 100%;
+}
+
+/** Submenu's */
+.menu li ul {
+	background: linear-gradient(to bottom,rgba(178,208,232,1) 0,rgba(178,208,232,1) 100%);;
+	box-shadow: 0 3px 1px rgba(0,0,0,.05);
+	display: none;
+	padding-left: 0px;
+
+}
+
+.menu li ul li {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.menu li ul li:hover {
+    background: rgba(97,144,183,1);
+}
+
 
 @@media screen and (min-width: 600px) {
 }

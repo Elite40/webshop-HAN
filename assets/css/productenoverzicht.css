@@ -1,0 +1,38 @@
+.producten-container {
+	/*background: red;*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    flex-flow: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.search-wrapper {
+	background: red;
+}
+
+.products {
+	margin-top: 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    flex-wrap: wrap;
+}
+
+.product-item {
+	border: 1px solid #ccc;
+	margin-right: 20px;
+	max-width: 200px;
+	max-height: 400px;
+}
+
+.product-item > img {
+	width: 100%;
+}
