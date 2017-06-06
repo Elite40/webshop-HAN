@@ -46,6 +46,18 @@
 	justify-content: center;
 }
 
+.search-button {
+	text-decoration: none;
+	color: #fff;
+	padding: 5px;
+	margin-left: 10px;
+	background: steelblue;
+}
+
+.amount-of-results {
+	margin-left: 120px;
+}
+
 .products {
 	margin-top: 20px;
 	display: -webkit-box;
