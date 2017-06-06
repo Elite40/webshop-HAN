@@ -1,0 +1,19 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
+
+.winkelwagen-wrapper > h1 {
+  text-align: center;
+}
+
+.product-afbeelding {
+  max-width: 120px;
+}
+
+.product-afbeelding img {
+  width: 100%;
+}
