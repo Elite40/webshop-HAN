@@ -15,6 +15,5 @@ try {
       $settings['password']
   );
 }catch(PDOException $e) {
-  throw $e->getMessage();
-  exit;
+  var_dump($e->getMessage());
 }
