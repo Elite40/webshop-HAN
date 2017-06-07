@@ -8,112 +8,164 @@
 		<link rel="stylesheet" href="assets/css/ad.css" type="text/css">
     <link rel="stylesheet" href="assets/css/registreren.css" type="text/css">
 	</head>
-  <body>
-     <div class="wrapper">
-        <h1>Registreren</h1>
-        <h3>Vul uw gegevens in</h3>
-        <div class="registratie-wrapper">
-           <form action="">
-              <div class="accountgegevens">
-                 <h3>Accountgegevens:</h3>
-                 <div class="form-element">
-                    <label for="Gebruikersnaam">Gebruikersnaam
-                    <span>*</span>
-                    </label>
-                    <input type="text" placeholder="Gebruikersnaam" name="username"/>
-                 </div>
-                 <div class="form-element">
-                    <label for="Gebruikersnaam">Wachtwoord
-                    <span>*</span>
-                    </label>
-                    <input type="password" placeholder="Wachtwoord" name="password"/>
-                 </div>
-                 <div class="form-element">
-                    <label for="Gebruikersnaam">Herhaal wachtwoord
-                    <span>*</span>
-                    </label>
-                    <input type="password" placeholder="Wachtwoord" name="repeat-pass" />
-                 </div>
-              </div>
-              <div class="factuuradres">
-                 <h3>Factuuradres:</h3>
-                 <div class="one-row">
-                    <div class="form-element">
-                       <label for="aanhef">Aanhef
-                       <span>*</span>
-                       </label>
-                       <select name="aanhef" id="aanhef-dropdown">
-                          <option value="dhr">Dhr.</option>
-                          <option value="dhr">Mvr.</option>
-                       </select>
-                    </div>
-                    <div class="form-element">
-                       <label for="aanhef">Voornaam
-                       <span>*</span>
-                       </label>
-                       <input type="text" name="name" placeholder="Voornaam"/>
-                    </div>
-                    <div class="form-element">
-                       <label for="aanhef">Tussenv.
-                       </label>
-                       <input type="text" name="tussenv" placeholder="Tussenvoegsels" />
-                    </div>
-                    <div class="form-element">
-                       <label for="aanhef">Achternaam
-                       <span>*</span>
-                       </label>
-                       <input type="text" name="achternaam" placeholder="Achternaam"/>
-                    </div>
-                 </div>
-                 <!-- einde one-row -->
-                 <div class="form-element">
-                    <label for="aanhef">Emailadres
-                    <span>*</span>
-                    </label>
-                    <input type="email" name="email" class="l-input" placeholder="Email adres" required/>
-                 </div>
-                 <div class="one-row">
-                    <div class="form-element">
-                       <label>Straatnaam
-                       <span>*</span>
-                       </label>
-                       <input type="text" name="straatnaam" class="l-input" placeholder="Straatnaam"/>
-                    </div>
-                    <div class="form-element huisnummer">
-                       <label>Huisnummer
-                       <span>*</span>
-                       </label>
-                       <input type="text" name="huisnummer" class="s-input"/>
-                    </div>
-                 </div>
-                 <div class="one-row">
-                    <div class="form-element">
-                       <label>Postcode
-                       <span>*</span>
-                       </label>
-                       <input type="text" name="straatnaam"  placeholder="postcode"/>
-                    </div>
-                    <div class="form-element ">
-                       <label>Plaatsnaam
-                       <span>*</span>
-                       </label>
-                       <input type="text" name="plaats" class="l-input" placeholder="Plaats"/>
-                    </div>
-                 </div>
-                 <div class="form-element ">
-                    <label>Telefoon
-                    <span>*</span>
-                    </label>
-                    <input type="text" name="telefoon" placeholder="Telefoon"/>
-                 </div>
-              </div>
-              <!-- einde factuuradres -->
-        </div>
+	<body>
+		<aside class="ad-container">
+					<img src="https://cdn-images-1.medium.com/max/800/1*ibN0ptxrg6LkZ5DZbKv2YA.png" alt="">
+		</aside>
+		<div class="wrapper">
+			<header>
+				<div class="logo-container">
+				<!-- Logo komt hier -->
+					<img src="http://norsktilhengerutleie.info/wp-content/uploads/2010/09/your-logo-here-aalesund1.png" alt="">
+				</div>
+
+				<div class="login-container">
+					<form action="#" method="POST" class="login-form">
+						<legend>Login</legend>
+						<div class="element-holder">
+					    	<input type="text" name="username" placeholder="Gebruikersnaam">
+						</div>
+						<div class="element-holder">
+					    	<input type="password" name="password" placeholder="swallaalla">
+						</div>
+
+						<div class="element-holder">
+							<input type="checkbox">Onthouden
+							<a href="#">Vergeten?</a>
+							<a href="#">Registreer</a>
+					    	<input type="submit" value="Login">
+						</div>
+					</form>
+				</div>
+
+			</header>
+			<nav>
+				<ul class="menu">
+					<li class="menu__item">
+						<a href="#">Nieuws</a>
+					</li>
+					<li class="menu__item">
+						<a href="#">Acties</a>
+					</li>
+					<li class="menu__item">
+						<a href="#">Over ons</a>
+					</li>
+					<li class="menu__item">
+						<a href="#">Vacatures</a>
+					</li>
+					<li class="menu__item">
+						<a href="#">Webshop</a>
+					</li>
+				</ul>
+			</nav>
+
+      <h1>Registreren</h1>
+      <h3>Vul uw gegevens in</h3>
+      <div class="registratie-wrapper">
+         <form action="">
+            <div class="accountgegevens">
+               <h3>Accountgegevens:</h3>
+               <div class="form-element">
+                  <label for="Gebruikersnaam">Gebruikersnaam
+                  <span>*</span>
+                  </label>
+                  <input type="text" placeholder="Gebruikersnaam" name="username"/>
+               </div>
+               <div class="form-element">
+                  <label for="Gebruikersnaam">Wachtwoord
+                  <span>*</span>
+                  </label>
+                  <input type="password" placeholder="Wachtwoord" name="password"/>
+               </div>
+               <div class="form-element">
+                  <label for="Gebruikersnaam">Herhaal wachtwoord
+                  <span>*</span>
+                  </label>
+                  <input type="password" placeholder="Wachtwoord" name="repeat-pass" />
+               </div>
+            </div>
+            <div class="factuuradres">
+               <h3>Factuuradres:</h3>
+               <div class="one-row">
+                  <div class="form-element">
+                     <label for="aanhef">Aanhef
+                     <span>*</span>
+                     </label>
+                     <select name="aanhef" id="aanhef-dropdown">
+                        <option value="dhr">Dhr.</option>
+                        <option value="dhr">Mvr.</option>
+                     </select>
+                  </div>
+                  <div class="form-element">
+                     <label for="aanhef">Voornaam
+                     <span>*</span>
+                     </label>
+                     <input type="text" name="name" placeholder="Voornaam"/>
+                  </div>
+                  <div class="form-element">
+                     <label for="aanhef">Tussenv.
+                     </label>
+                     <input type="text" name="tussenv" placeholder="Tussenvoegsels" />
+                  </div>
+                  <div class="form-element">
+                     <label for="aanhef">Achternaam
+                     <span>*</span>
+                     </label>
+                     <input type="text" name="achternaam" placeholder="Achternaam"/>
+                  </div>
+               </div>
+               <!-- einde one-row -->
+               <div class="form-element">
+                  <label for="aanhef">Emailadres
+                  <span>*</span>
+                  </label>
+                  <input type="email" name="email" class="l-input" placeholder="Email adres" required/>
+               </div>
+               <div class="one-row">
+                  <div class="form-element">
+                     <label>Straatnaam
+                     <span>*</span>
+                     </label>
+                     <input type="text" name="straatnaam" class="l-input" placeholder="Straatnaam"/>
+                  </div>
+                  <div class="form-element huisnummer">
+                     <label>Huisnummer
+                     <span>*</span>
+                     </label>
+                     <input type="text" name="huisnummer" class="s-input"/>
+                  </div>
+               </div>
+               <div class="one-row">
+                  <div class="form-element">
+                     <label>Postcode
+                     <span>*</span>
+                     </label>
+                     <input type="text" name="straatnaam"  placeholder="postcode"/>
+                  </div>
+                  <div class="form-element ">
+                     <label>Plaatsnaam
+                     <span>*</span>
+                     </label>
+                     <input type="text" name="plaats" class="l-input" placeholder="Plaats"/>
+                  </div>
+               </div>
+               <div class="form-element ">
+                  <label>Telefoon
+                  <span>*</span>
+                  </label>
+                  <input type="text" name="telefoon" placeholder="Telefoon"/>
+               </div>
+            </div>
+            <!-- einde factuuradres -->
+      </div>
 
 
-        </form>
-       <a href="#" type="submit">Opslaan</a>
-     </div>
-  </body>
+      </form>
+     <a href="#" type="submit">Opslaan</a>
+
+
+		</div>
+
+	</body>
 
 </html>
