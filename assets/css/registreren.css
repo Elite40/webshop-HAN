@@ -1,0 +1,49 @@
+.registratie-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.accountgegevens {
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: block;
+  float: left;
+}
+
+.factuuradres {
+  margin-left: 20px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 10px;
+  max-width: 530px;
+}
+
+.form-element {
+  margin-bottom: 20px;
+}
+
+.form-element > label{
+  display: block;;
+}
+
+.one-row > .form-element{
+  display: inline-block;
+}
+
+.l-input {
+  width: 100%;
+}
+
+.m-input {
+  width: 50%;
+}
+
+.s-input {
+  width: 20%;
+}
+
+
+.huisnummer {
+  display: block;
+  margin-left: 10px;
+}

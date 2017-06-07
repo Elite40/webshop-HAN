@@ -82,7 +82,7 @@ nav {
 	flex: 1;
 	text-align: center;
 	padding: 5px;
-	transition: all linear 0.1s;	
+	transition: all linear 0.1s;
 }
 
 .menu li a {
@@ -99,9 +99,9 @@ nav {
 .menu li:hover ul{
 	display: flex;
 	flex-flow: column wrap;
-	position: absolute; 
-	top: 100%; 
-	left: 0; 
+	position: absolute;
+	top: 100%;
+	left: 0;
 	width: 100%;
 }
 
