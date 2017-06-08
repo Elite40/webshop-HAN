@@ -47,3 +47,20 @@
   display: block;
   margin-left: 10px;
 }
+
+.save-btn {
+  text-decoration: none;
+  color: white;
+  background: #2ecc71;
+  padding: 10px 40px;
+  float: right;
+}
+
+.save-btn:hover {
+  background: #27ae60;
+}
+
+.submit-btn-wrapper a{
+
+
+}

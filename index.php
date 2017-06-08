@@ -1,19 +1,12 @@
 <?php
+require('init.php');
 
-include('settings.php');
+$page = (isset($_GET['page']) ? strtolower($_GET['page']) : 'home');
 
-try {
-  $pdo = new PDO(
-      sprintf(
-        'mysql:host=%s;dbname=%s;port=%s;charset=%s',
-        $settings['host'],
-        $settings['name'],
-        $settings['port'],
-        $settings['charset']
-      ),
-      $settings['username'],
-      $settings['password']
-  );
-}catch(PDOException $e) {
-  var_dump($e->getMessage());
+switch($page) {
+  case 'home':
+    require __DIR__ . '/views/over-ons.php';
+  break;
+  default:
+  break;
 }
