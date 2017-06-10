@@ -1,14 +1,14 @@
-USE test; /* Of een ander database */
+USE mysql; /* Of een ander database */
 
 DROP DATABASE IF EXISTS WEBSHOP;
 
 CREATE DATABASE WEBSHOP;
- 
+
 USE WEBSHOP;
 
- 
+
 /* TABLE CATEGORIE
- * 
+ *
  * "Er is een categorie '<categorienaam>'."
  */
 CREATE TABLE CATEGORIE (
@@ -19,7 +19,7 @@ CREATE TABLE CATEGORIE (
 );
 
 /* TABLE GEBRUIKER
- * 
+ *
  * "Gebruiker <gebruikersnaam> heeft als wachtwoord '<wachtwoord>'."
  * "Gebruiker <gebruikersnaam> heeft als voornaam <voornaam>."
  * "Gebruiker <gebruikersnaam> heeft als tussenvoegsel <tussenvoegsel>."
@@ -55,7 +55,7 @@ CREATE TABLE GEBRUIKER (
 
 
 /* TABLE PRODUCT
- * 
+ *
  * "Product <productnummer> is '<productnaam>'."
  * "Product <productnummer> valt onder de categorie '<categorienaam>'."
  * "Product <productnummer> heeft thumbnail '<bestandsnaam>'."
@@ -81,13 +81,13 @@ CREATE TABLE PRODUCT (
    CONSTRAINT CK_VOORRAAD       CHECK (VOORRAAD > 0),
    CONSTRAINT CK_OMSCHRIJVING   CHECK(LEN(OMSCHRIJVING) > 50),
    CONSTRAINT FK_PRODUCT_CATEGORIE FOREIGN KEY (CATEGORIE)
-				REFERENCES CATEGORIE (CATEGORIENAAM) 
-					ON DELETE NO ACTION 
+				REFERENCES CATEGORIE (CATEGORIENAAM)
+					ON DELETE NO ACTION
 					ON UPDATE NO ACTION
 );
 
 /* TABLE PRODUCT_GERELATEERD_PRODUCT
- * 
+ *
  * "Product <productnummer> is gerelateerd aan product <productnummer>."
  */
 CREATE TABLE PRODUCT_GERELATEERD_PRODUCT (
@@ -105,6 +105,3 @@ CREATE TABLE PRODUCT_GERELATEERD_PRODUCT (
 					ON DELETE NO ACTION
 					ON UPDATE NO ACTION
 );
-
-
-

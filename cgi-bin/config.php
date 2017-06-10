@@ -2,9 +2,9 @@
 
 $GLOBALS['mysql'] = [
   'host' => '127.0.0.1',
-  'port' => '3306',
+  'port' => '8889',
   'name' => 'webshop',
   'username' => 'root',
-  'password' => '',
+  'password' => 'root',
   'charset' => 'utf8'
 ];

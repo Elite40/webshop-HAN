@@ -1,6 +1,6 @@
 USE webshop;
 
-SET FOREIGN_KEY_CHECKS = 0; 
+SET FOREIGN_KEY_CHECKS = 0;
 
 TRUNCATE PRODUCT_GERELATEERD_PRODUCT;
 TRUNCATE PRODUCT;
@@ -8,7 +8,7 @@ TRUNCATE GEBRUIKER;
 TRUNCATE PRODUCT;
 TRUNCATE CATEGORIE;
 
-SET FOREIGN_KEY_CHECKS = 1; 
+SET FOREIGN_KEY_CHECKS = 1;
 
 INSERT categorie VALUES ('categorie AA');
 INSERT categorie VALUES ('categorie BB');
@@ -45,4 +45,3 @@ INSERT INTO GEBRUIKER VALUES ('barabas', 'Professor', NULL, 'Barabas', 'Bolleboz
 INSERT INTO GEBRUIKER VALUES ('franka', 'Frank', NULL, 'Francesca Victoria', 'Museumstraat', 1, '4920DD', 'Groterdam', 'franka@striphelden.eu', 'v', 'Bars');
 INSERT INTO GEBRUIKER VALUES ('pietjepuk', 'Pietje', NULL, 'Puk', 'Postlaan', 6, '3453AA', 'Keteldorp ', 'pietjepuk@pttpost.nl', 'm', 'spitsoor');
 INSERT INTO GEBRUIKER VALUES ('wdviking', 'Wicky', 'de', 'Viking', 'Whalhalla', 87, '4326BB', 'Flake', 'wicky@halmar.com', 'm', 'ylvi');
-
