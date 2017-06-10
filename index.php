@@ -1,5 +1,5 @@
 <?php
-;
+
 require('init.php');
 
 $page = (isset($_GET['page']) ? strtolower($_GET['page']) : 'home');
@@ -41,12 +41,12 @@ switch ($page) {
     <link rel="stylesheet" href="assets/css/master.css" type="text/css">
     <link rel="stylesheet" href="assets/css/ad.css" type="text/css">
     <link rel="stylesheet" href="assets/css/productenoverzicht.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/productpagina.cssu.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/registreren.css.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/winkelwagen.css.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/productpagina.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/registreren.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/winkelwagen.css" type="text/css">
 </head>
 <body>
-<?php include 'views/ad.php'; ?>
+<?php require 'views/ad.php'; ?>
 
 <div class="wrapper">
 

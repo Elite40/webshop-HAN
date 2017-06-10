@@ -1,4 +1,4 @@
-USE test; /* Of een ander database */
+USE site16; /* Of een ander database */
 
 DROP DATABASE IF EXISTS WEBSHOP;
 
