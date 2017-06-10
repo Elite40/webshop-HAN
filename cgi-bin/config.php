@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['mysql'] = [
-  'host' => '127.0.0.1',
+  'host' => 'localhost',
   'port' => '8889',
   'name' => 'webshop',
   'username' => 'root',
