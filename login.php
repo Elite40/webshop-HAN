@@ -1,27 +1,34 @@
 <?php
-include("config.php");
-   session_start();
+session_start();
+// Turn on error reporting:
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form
+require_once 'User.php';
+require_once 'DB.php';
 
-      $username = mysqli_real_escape_string($db,$_POST['GEBRUIKERSNAAM']);
-      $password = mysqli_real_escape_string($db,$_POST['WACHTWOORD']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-      $sql = "SELECT GEBRUIKERSNAAM FROM GEBRUIKER WHERE GEBRUIKERSNAAM = '$username' and WACHTWOORD = '$password'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
+    if (!isset($_POST['gebruikersnaam']) || !isset($_POST['wachtwoord'])) {
+        echo "Vul de verplichte velden in";
+        return;
+    }
 
-      $count = mysqli_num_rows($result);
+    $db = new DB();
 
-      // If result matched $myusername and $mypassword, table row must be 1 row
+    $user = new User($db);
 
-      if($count == 1) {
-         session_register("username");
-         $_SESSION['GEBRUIKERSNAAM'] = $username;
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+    try {
+        $username = $_POST['gebruikersnaam'];
+        $password = $_POST['wachtwoord'];
+
+        $user->login($username, $password);
+    }catch(PDOException $e) {
+        echo "Failed while trying to login:<br>" . $e->getMessage();
+    }
+
+}
+
+
+
 ?>

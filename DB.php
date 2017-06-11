@@ -2,38 +2,48 @@
 
 class DB
 {
-    public $db;
+    private $db;
 
     private $results;
 
     private static $_instance = null;
 
+    private $config = [
+        'host' => 'localhost',
+        'port' => '8889',
+        'name' => 'webshop',
+        'username' => 'root',
+        'password' => 'root',
+        'charset' => 'utf8'
+    ];
+
     public function __construct()
     {
+        $this->connectToDb();
     }
 
-    public static function getInstance()
-    {
-        if (!(isset(self::$_instance))) {
-            self::$_instance = new DB();
+    public function getDbInstance() {
+        if ($this->db instanceof PDO) {
+            return $this->db;
         }
-
-        return self::$_instance;
     }
 
+    /**
+     * @throws PDOException
+     */
     public function connectToDb()
     {
         try {
             $this->db = new PDO(
                 sprintf(
                     'mysql:host=%s;dbname=%s;port=%s;charset=%s',
-                    config('mysql', 'host'),
-                    config('mysql', 'name'),
-                    config('mysql', 'port'),
-                    config('mysql', 'charset')
+                    $this->config['host'],
+                    $this->config['name'],
+                    $this->config['port'],
+                    $this->config['charset']
                 ),
-                config('mysql', 'username'),
-                config('mysql', 'password')
+                $this->config['username'],
+                $this->config['password']
             );
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
