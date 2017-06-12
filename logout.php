@@ -3,7 +3,7 @@
 session_start();
 session_destroy();
 
-echo 'Je bent uitgelogd';
+echo 'Je wordt uitgelogd...';
 
 sleep(2);
 
