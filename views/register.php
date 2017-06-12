@@ -80,9 +80,14 @@ if (isset($_POST['registreren'])) {
                             <span>*</span>
                         </label>
                         <select name="aanhef" id="aanhef-dropdown">
-                            <option value="dhr">Dhr.</option>
-                            <option value="dhr">Mvr.</option>
+                            <option value="m">Dhr.</option>
+                            <option value="v">Mvr.</option>
                         </select>
+                        <?php
+                            if (isset($_POST['aanhef'])) {
+                                $_SESSION['aanhef'] = $_POST['aanhef'];
+                            }
+                        ?>
                     </div>
                     <div class="form-element">
                         <label for="Voornaam">Voornaam

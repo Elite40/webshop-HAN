@@ -26,6 +26,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }catch(PDOException $e) {
         echo "Failed while trying to login:<br>" . $e->getMessage();
     }
-
 }
 

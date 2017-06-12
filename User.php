@@ -56,6 +56,7 @@ class User
             $stmt->execute();
 
             $user = $stmt->fetchObject();
+            var_dump($user);
 
             if ($user === false) {
                 $_SESSION['loginFailedMessage'] = 'Geen geldige gebruikersnaam en wachtwoord combinatie';
@@ -82,6 +83,34 @@ class User
         if (!$this->validateFields($form)) {
             $_SESSION['form-error'] = $this->errors;
             return;
+        }
+
+        try {
+            $stmt = $this->db->prepare(
+                "insert into GEBRUIKER (GEBRUIKERSNAAM, VOORNAAM, TUSSENVOEGSEL, ACHTERNAAM, STRAATNAAM, HUISNUMMER, POSTCODE, WOONPLAATS, EMAIL, SEXE, WACHTWOORD) 
+                           values(:gebruikersnaam, :voornaam, :tussenvoegsel, :achternaam, :straatnaam, :huisnummer, :postcode, :woonplaats, :email, :sexe, :wachtwoord)"
+            );
+            $stmt->bindParam("gebruikersnaam", $form['username']);
+            $stmt->bindParam("voornaam", $form['voornaam']);
+            $stmt->bindParam("tussenvoegsel", $form['tussenv']);
+            $stmt->bindParam("achternaam", $form['achternaam']);
+            $stmt->bindParam("straatnaam", $form['straatnaam']);
+            $stmt->bindParam("huisnummer", $form['huisnummer']);
+            $stmt->bindParam("postcode", $form['postcode']);
+            $stmt->bindParam("woonplaats", $form['plaats']);
+            $stmt->bindParam("email", $form['email']);
+            $stmt->bindParam("sexe", $form['aanhef']);
+            $stmt->bindParam("wachtwoord", $form['password']);
+
+            $stmt->execute();
+
+            $this->login($form['username'], $form['password']);
+            if ($_SESSION['user'] === true) {
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+            }
+
+        } catch (PDOException $e) {
+            throw $e;
         }
 
         //TODO::Save the new user
