@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-require_once 'cgi-bin/config.php';
 require_once 'helpers/functions.php';
 require_once 'DB.php';
 
-$db = new DB();
 try{
-    $db->connectToDb();
+    $db = new DB();
 }catch (PDOException $e) {
     echo $e->getMessage();
     exit;

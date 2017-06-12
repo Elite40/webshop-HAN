@@ -43,13 +43,16 @@ class User
 
             $user = $stmt->fetchObject();
 
+            if ($user === false) {
+                $_SESSION['loginFailedMessage'] = 'Geen geldige gebruikersnaam en wachtwoord combinatie';
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+            }
+
             if (count($user) > 0) {
                 $_SESSION['user'] = $user;
 
                 //Redirects back to the place where he came from
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
-            } else {
-                echo "<div id='login-warning'>Inloggen mislukt, gebruikersnaam of wachtwoord is verkeerd..</div>";
             }
 
         } catch (PDOException $e) {

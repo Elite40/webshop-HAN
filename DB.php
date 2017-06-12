@@ -8,17 +8,14 @@ class DB
 
     private static $_instance = null;
 
-    private $config = [
-        'host' => 'localhost',
-        'port' => '8889',
-        'name' => 'webshop',
-        'username' => 'root',
-        'password' => 'root',
-        'charset' => 'utf8'
-    ];
+    private $config;
 
     public function __construct()
     {
+        require_once "Settings/config.php";
+
+        $this->config = Config::getConfig();
+
         $this->connectToDb();
     }
 
