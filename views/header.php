@@ -38,7 +38,7 @@
                     <div class="element-holder">
                         <input type="checkbox">Onthouden
                         <a href="#">Vergeten?</a>
-                        <a href="#">Registreer</a>
+                        <a href="?page=registreren">Registreer</a>
                         <input type="submit" value="Login">
                     </div>
                 </form>

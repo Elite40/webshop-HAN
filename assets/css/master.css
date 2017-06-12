@@ -210,6 +210,15 @@ nav {
 	border: 1px solid #fff;
 }
 
+.error-input-field {
+	border: 1px solid #D24444;
+}
+
+.form-invalid-message {
+	display: inherit;
+	font-size: 12px;
+	color: red;
+}
 
 .login-failed {
 	-moz-animation: loginAnimation 0s ease-in 2s forwards;

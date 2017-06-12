@@ -25,6 +25,9 @@ switch ($page) {
     case 'webshop':
         $pageToLoad .= '/views/webshop.php';
         break;
+    case 'registreren':
+        $pageToLoad .= '/views/register.php';
+        break;
     default:
         $pageToLoad .= '/views/home.php';
         break;
