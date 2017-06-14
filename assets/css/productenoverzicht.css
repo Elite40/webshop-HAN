@@ -87,14 +87,23 @@
 }
 
 .product-item {
+	position: relative;
 	border: 1px solid #ccc;
 	margin-right: 20px;
-	max-width: 200px;
-	max-height: 400px;
+	width: 200px;
+	height: 400px;
 	align-items: stretch;
 	margin-top: 20px;
 }
 
 .product-item > img {
 	width: 100%;
+}
+
+.product-item--information {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+
+
 }

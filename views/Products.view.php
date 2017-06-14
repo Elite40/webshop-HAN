@@ -64,12 +64,18 @@ if ($cat !== null) {
             foreach ($products as $product) {
                 ?>
             <div class="product-item">
-                <img src="<?php echo 'http://localhost/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>" alt="">
-                <h2 class="product-item--title"><?php echo $product->PRODUCTNAAM ?></h2>
+                <div class="product-image-holder">
+                    <img src="<?php echo 'http://localhost/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>" alt="">
+                </div>
+                <div class="product-title-container">
+                    <h2 class="product-item--title"><?php echo $product->PRODUCTNAAM ?></h2>
+                </div>
                 <div class="product-item--information">
                     <h3>€ <?php echo $product->PRIJS ?></h3>
-                    <a href="#" class="shop-button">In winkelwagen</a>
+                    <a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>
                 </div>
+
+
             </div>
             <?php
             }
