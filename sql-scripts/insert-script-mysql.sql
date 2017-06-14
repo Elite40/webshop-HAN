@@ -18,8 +18,8 @@ INSERT categorie VALUES ('Sensoren & elektronica');
 /** SET IDENTITY_INSERT PRODUCT ON -- this is always set in mysql by default */
 
 INSERT INTO product VALUES (10, 'Einddemper', 'uitlaatsysteem: voor einddemper serienummer: 58.7063', 'Uitlaatsysteem',
-                            CAST(45.57 AS DECIMAL(8, 2)), NULL, 'plaatjes/afbeeldingA.jpg',
-                            'plaatjes/afbeeldingA-klein.jpg');
+                            CAST(45.57 AS DECIMAL(8, 2)), NULL, 'plaatjes/einddemper.jpg',
+                            'plaatjes/einddemper-klein.jpg');
 INSERT INTO product VALUES (11, 'Achterdemper',
                             'Dit zijn blauwe naaldhakken. Sed vitae purus sit amet tortor porta gravida sed ut massa. Quisque non arcu ut lectus adipiscing adipiscing a vel elit. Quisque pharetra eget velit sed fringilla. Sed nisl elit, interdum in elit id, sollicitudin eleifend metus. Sed et venenatis purus, at fringilla leo. Maecenas vestibulum euismod enim, sollicitudin bibendum mi consectetur id. Donec a turpis ac lorem aliquam cursus eget ac sem. Mauris eu tellus augue. Phasellus non risus massa. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi a fermentum libero ',
                             'Uitlaatsysteem', CAST(75.57 AS DECIMAL(8, 2)), 33, 'plaatjes/achterdemper.jpg',
@@ -57,7 +57,7 @@ INSERT INTO product VALUES (17, 'DVD/USB/SD - FM/AM tuner, navigatie en draadloz
                              climate control, stoelverwarming, parkingsensor, camera,
                              telefoon bediening etc.(incl.scherm info:radio, nummer, telefoon, navigatie-instructies op MFD)',
                             'Autoradio\'s', CAST(677.60 AS DECIMAL(8, 2)), 45, 'plaatjes/FM-AM-tuner-en-AUX-ingang.jpg',
-                            'FM-AM-tuner-en-AUX-ingang-klein.jpg');
+                            'plaatjes/FM-AM-tuner-en-AUX-ingang-klein.jpg');
 
 INSERT INTO product VALUES (34, 'Tandriem 14362 FEBI',
                             'Gewicht (kg): 0,1 Aanvullende artikelen / Aanvullende info 2: Voor nokkenas . Etiam libero nulla, sagittis vitae tellus at, ornare varius ante. Nunc leo nisi, placerat non convallis id, fermentum in metus. Nunc sollicitudin eleifend hendrerit. Nam neque velit, vehicula vel egestas ac, blandit feugiat leo. Morbi ',
