@@ -26,7 +26,7 @@ switch ($page) {
         $pageToLoad .= '/views/nieuws.php';
         break;
     case 'webshop':
-        $pageToLoad .= '/views/webshop.php';
+        $pageToLoad .= '/views/Products.view.php';
         break;
     case 'registreren':
         $pageToLoad .= '/views/register.php';
