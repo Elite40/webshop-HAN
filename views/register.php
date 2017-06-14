@@ -1,9 +1,9 @@
 <?php
-session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once 'User.php';
-require_once 'DB.php';
-$db = new DB();
 
 $error = [];
 
@@ -11,9 +11,20 @@ $error = [];
 if (isset($_POST['registreren'])) {
 
     //To remind the input fields
-    $_SESSION['username'] = $_POST['username'];
+//    $_SESSION['auto-fill'] = [
+//            'username'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'voornaam'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'achternaam'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'email'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'straatnaam'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'huisnummer'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'plaats'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//            'telefoon'=> (isset($_POST['username']) ? $_POST['username'] : null),
+//    ];
 
-    $user = new User($db);
+    $_SESSION['username'] = (isset($_POST['username']) ? $_POST['username'] : null);
+
+    $user = new User();
     try {
         $user->registerUser($_POST);
     } catch (Exception $e) {
@@ -25,6 +36,15 @@ if (isset($_POST['registreren'])) {
 
     <h1>Registreren</h1>
     <h3>Vul uw gegevens in</h3>
+
+<?php
+if (isset($_SESSION['user-already-exists'])) {
+    echo '<span class="user-already-exists">' . $_SESSION['user-already-exists'] . '</span>';
+}
+?>
+
+    <span></span>
+
     <div class="registratie-wrapper">
         <form method="POST" action="">
             <div class="accountgegevens">
@@ -35,10 +55,14 @@ if (isset($_POST['registreren'])) {
                     </label>
                     <?php
                     if (isset($_SESSION['form-error']['username'])) {
-                        echo '<input type="text" placeholder="Gebruikersnaam" name="username" class="error-input-field" value="' . $_SESSION['username'] . '"/>';
+                        echo '<input type="text" placeholder="Gebruikersnaam" name="username" class="error-input-field" value="' .
+                            (isset($_SESSION['username']) ? $_SESSION['username'] : '')
+                            . '"/>';
                         echo '<span class="form-invalid-message">' . $_SESSION['form-error']['username'] . '</span>';
                     } else {
-                        echo '<input type="text" placeholder="Gebruikersnaam" name="username" value="' . $_SESSION['username'] . '"/>';
+                        echo '<input type="text" placeholder="Gebruikersnaam" name="username" value="' .
+                            (isset($_SESSION['username']) ? $_SESSION['username'] : '') .
+                            '"/>';
                     }
                     ?>
 
@@ -84,9 +108,9 @@ if (isset($_POST['registreren'])) {
                             <option value="v">Mvr.</option>
                         </select>
                         <?php
-                            if (isset($_POST['aanhef'])) {
-                                $_SESSION['aanhef'] = $_POST['aanhef'];
-                            }
+                        if (isset($_POST['aanhef'])) {
+                            $_SESSION['aanhef'] = $_POST['aanhef'];
+                        }
                         ?>
                     </div>
                     <div class="form-element">
@@ -219,5 +243,6 @@ if (isset($_POST['registreren'])) {
 <?php
 //Destroying form errors
 unset($_SESSION['form-error']);
+unset($_SESSION['user-already-exists']);
 
 ?>

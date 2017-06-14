@@ -29,11 +29,10 @@ class User
     /**
      * User constructor.
      *
-     * @param $db DB
      */
-    function __construct($db)
+    function __construct()
     {
-        $this->db = $db->getDbInstance();
+        $this->db = DB::getInstance();
     }
 
     /**
@@ -41,11 +40,10 @@ class User
      *
      * @param $username
      * @param $password
-     * @throws PDOException
+     * @param string $redirectTo
      */
-    public function login($username, $password)
+    public function login($username, $password, $redirectTo = '')
     {
-
         try {
             $stmt = $this->db->prepare(
                 "select * from GEBRUIKER where GEBRUIKERSNAAM=:gebruikersnaam and WACHTWOORD=:wachtwoord LIMIT 1"
@@ -56,7 +54,6 @@ class User
             $stmt->execute();
 
             $user = $stmt->fetchObject();
-            var_dump($user);
 
             if ($user === false) {
                 $_SESSION['loginFailedMessage'] = 'Geen geldige gebruikersnaam en wachtwoord combinatie';
@@ -67,7 +64,13 @@ class User
                 $_SESSION['user'] = $user;
 
                 //Redirects back to the place where he came from
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                if (empty($redirectTo))  {
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                }
+
+                //Redirect to the specified page
+                header('Location: http://localhost/webshop-HAN/index.php?page='. $redirectTo);
+
             }
         } catch (PDOException $e) {
             throw $e;
@@ -79,9 +82,13 @@ class User
      */
     public function registerUser($form = [])
     {
-
         if (!$this->validateFields($form)) {
             $_SESSION['form-error'] = $this->errors;
+            return;
+        }
+
+        if ($this->userAlreadyExists($form['username'])) {
+            $_SESSION['user-already-exists'] = 'De opgegeven gebruikersnaam bestaat al';
             return;
         }
 
@@ -112,9 +119,24 @@ class User
         } catch (PDOException $e) {
             throw $e;
         }
-
-        //TODO::Save the new user
     }
+
+    private function userAlreadyExists($username) {
+        $stmt = $this->db->prepare("select * from GEBRUIKER where GEBRUIKERSNAAM=:username LIMIT 1");
+        $stmt->bindParam("username", $username);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$result) {
+            return false;
+        }
+
+        if (count($result) > 0) {
+            //User exists
+            return true;
+        }
+    } 
 
     /**
      * Validates the registration form.

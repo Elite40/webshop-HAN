@@ -1,11 +1,8 @@
 <?php
 session_start();
-// Turn on error reporting:
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 require_once 'User.php';
-require_once 'DB.php';
+require_once 'Database/DB.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -14,9 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return;
     }
 
-    $db = new DB();
-
-    $user = new User($db);
+    $user = new User();
 
     try {
         $username = $_POST['gebruikersnaam'];

@@ -220,6 +220,23 @@ nav {
 	color: red;
 }
 
+.user-already-exists {
+	-moz-animation: loginAnimation 0s ease-in 2s forwards;
+	/* Firefox */
+	-webkit-animation: loginAnimation 0s ease-in 2s forwards;
+	/* Safari and Chrome */
+	-o-animation: loginAnimation 0s ease-in 2s forwards;
+	/* Opera */
+	animation: loginAnimation 0s ease-in 2s forwards;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+
+	background: red;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
 .login-failed {
 	-moz-animation: loginAnimation 0s ease-in 2s forwards;
 	/* Firefox */

@@ -12,26 +12,28 @@ class DB
 
     public function __construct()
     {
-        require_once "Settings/config.php";
+        require_once "Database/Config.php";
 
         $this->config = Config::getConfig();
-
-        $this->connectToDb();
     }
 
-    public function getDbInstance() {
-        if ($this->db instanceof PDO) {
-            return $this->db;
+    public static function getInstance(){
+        if(!(isset(self::$_instance))){
+            self::$_instance = new DB;
         }
+        return self::$_instance->connect();
     }
 
     /**
+     * Returns the connection.
+     *
+     * @return PDO
      * @throws PDOException
      */
-    public function connectToDb()
+    public function connect()
     {
         try {
-            $this->db = new PDO(
+            return new PDO(
                 sprintf(
                     'mysql:host=%s;dbname=%s;port=%s;charset=%s',
                     $this->config['host'],
@@ -40,9 +42,10 @@ class DB
                     $this->config['charset']
                 ),
                 $this->config['username'],
-                $this->config['password']
+                $this->config['password'],
+                [PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION]
             );
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
         } catch (PDOException $e) {
             throw $e;
         }

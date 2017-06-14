@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'helpers/functions.php';
-require_once 'DB.php';
+require_once 'Database/DB.php';
 
 try{
     $db = new DB();
