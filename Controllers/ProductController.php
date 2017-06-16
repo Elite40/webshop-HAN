@@ -75,4 +75,12 @@ class ProductController
         $product = $stmt->fetchObject();
         return $product;
     }
+
+    public function checkStock($productNumber) {
+        $product = $this->getProductByProductNumber($productNumber);
+        if ($product->VOORRAAD !== null && $product->VOORRAAD > 0) {
+            return true;
+        }
+        return false;
+    }
 }

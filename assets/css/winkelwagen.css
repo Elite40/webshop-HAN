@@ -10,8 +10,16 @@ table {
   width: 100%;
 }
 
+td.image {
+  max-width: 40px;
+  max-height: 80px;
+}
+
 .winkelwagen-pagina-container {
-  margin-left: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
 }
@@ -31,4 +39,10 @@ table {
 
 .product-afbeelding img {
   width: 100%;
+}
+
+.subtotal-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: right;
 }

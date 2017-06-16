@@ -24,7 +24,11 @@ if ($cat !== null) {
 }
 
 if (isset($_POST['add-to-cart'])) {
-    $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
+    if ($productController->checkStock($_POST['add-to-cart'])) {
+        $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
+    } else {
+        echo "<script type='text/javascript'>alert('Dit product is op dit moment niet op voorraad.');</script>";
+    }
 }
 
 ?>

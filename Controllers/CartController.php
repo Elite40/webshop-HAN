@@ -26,10 +26,26 @@ class CartController
     }
 
     public function removeFromCart($product) {
-
+        foreach ($this->getCart() as $k =>$v) {
+            foreach ($this->getCart()[$k] as $key => $value) {
+                if ($key === "PRODUCTNUMMER" && $value == $product->PRODUCTNUMMER) {
+                    unset($_SESSION['cart_items'][$k]);
+                }
+            }
+        }
     }
 
     public function emptyCart() {
+        foreach ($this->getCart() as $product) {
+            $this->removeFromCart($product);
+        }
+    }
 
+    public function getSubTotal() {
+        $subtotal = 0.0;
+        foreach ($this->getCart() as $product) {
+            $subtotal += $product->PRIJS;
+        }
+        return $subtotal;
     }
 }
