@@ -66,11 +66,13 @@ class User
                 //Redirects back to the place where he came from
                 if (empty($redirectTo))  {
                     header('Location: ' . $_SERVER['HTTP_REFERER']);
+                } else {
+
+                    //Redirect to the specified page
+                    header('Location: http://localhost/webshop-HAN/index.php?page='. $redirectTo);
                 }
 
-                //Redirect to the specified page
-                header('Location: http://localhost/webshop-HAN/index.php?page='. $redirectTo);
-
+                $_SESSION['cart_items'] = [];
             }
         } catch (PDOException $e) {
             throw $e;

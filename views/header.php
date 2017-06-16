@@ -23,7 +23,7 @@
 
     if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
         include 'loggedIn.php';
-    } else { ?>
+    } else { $_SESSION['cart_items'] = []; ?>
 
             <div class="login-container">
                 <form action="login.php" method="POST" class="login-form">
@@ -67,7 +67,7 @@
             <a href="?page=webshop">Webshop</a>
             <ul>
                 <li><a href="#">Producten</a></li>
-                <li><a href="#">Winkelwagen</a></li>
+                <li><a href="?page=winkelwagen">Winkelwagen</a></li>
                 <li><a href="#">Afrekenen</a></li>
             </ul>
         </li>

@@ -3,10 +3,10 @@ class Config
 {
     public static $config = [
         'host' => 'localhost',
-        'port' => '3306',
+        'port' => '8889',
         'name' => 'webshop',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'charset' => 'utf8'
     ];
     public static function getConfig()

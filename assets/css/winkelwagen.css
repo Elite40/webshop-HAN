@@ -10,6 +10,17 @@ table {
   width: 100%;
 }
 
+.winkelwagen-pagina-container {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.winkelwagen-product-container {
+  display: flex;
+  margin-top: 20px;
+}
+
 .winkelwagen-wrapper > h1 {
   text-align: center;
 }

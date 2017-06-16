@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 require_once 'Controllers/ProductController.php';
 require_once 'Controllers/CategoryController.php';
+require_once 'Controllers/CartController.php';
 require_once 'helpers/functions.php';
 require_once 'Product.php';
 
@@ -12,6 +13,7 @@ $cat = (isset($_GET['cat']) ? $_GET['cat'] : null);
 
 $productController = new ProductController();
 $categoryController = new CategoryController();
+$cartController = new CartController();
 
 $products = $productController->getAllProducts();
 $categories = $categoryController->getAllCategories();
@@ -19,6 +21,10 @@ $categories = $categoryController->getAllCategories();
 if ($cat !== null) {
     $products = [];
     $products = $productController->getProductsByCategory($cat);
+}
+
+if (isset($_POST['add-to-cart'])) {
+    $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
 }
 
 ?>
@@ -65,14 +71,17 @@ if ($cat !== null) {
                 ?>
             <div class="product-item">
                 <div class="product-image-holder">
-                    <img src="<?php echo 'http://localhost/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>" alt="">
+                    <img src="<?php echo 'http://localhost:8888/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>" alt="">
                 </div>
                 <div class="product-title-container">
                     <h2 class="product-item--title"><?php echo $product->PRODUCTNAAM ?></h2>
                 </div>
                 <div class="product-item--information">
                     <h3>€ <?php echo $product->PRIJS ?></h3>
-                    <a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>
+                    <form method="POST">
+                        <button class="shop-button to-shoppingcart-btn" type="submit" name="add-to-cart" formmethod="post" value=<?php echo $product->PRODUCTNUMMER ?>>In Winkelwagen</button>
+                    </form>
+                    <!--<a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>-->
                 </div>
 
 

@@ -63,4 +63,16 @@ class ProductController
         return $this->products;
 
     }
+
+    public function getProductByProductNumber($productNumber) {
+        $stmt = $this->db->prepare("select * from " .$this->table . " where PRODUCTNUMMER=:productnummer");
+        $stmt->bindParam(":productnummer", $productNumber, PDO::PARAM_STR);
+
+        if (!$stmt->execute()) {
+            die("Failure occured. see method: <i>" . __FUNCTION__ . "()</i>");
+        }
+
+        $product = $stmt->fetchObject();
+        return $product;
+    }
 }

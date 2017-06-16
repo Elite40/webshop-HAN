@@ -31,6 +31,9 @@ switch ($page) {
     case 'registreren':
         $pageToLoad .= '/views/register.php';
         break;
+    case 'winkelwagen':
+        $pageToLoad .='/views/winkelwagen.php';
+        break;
     default:
         $pageToLoad .= '/views/home.php';
         break;
