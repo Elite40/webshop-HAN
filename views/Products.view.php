@@ -44,23 +44,25 @@ if (isset($_POST['search-term'])) {
 
 <div class="producten-container">
 
-    <div class="search-wrapper">
-        <form method="POST">
-            <input type="text" name="search-term" placeholder="Zoektermen ingeven">
-            <input type="submit" class="search-button" value="Zoeken"/>
-        </form>
-    </div>
+    <div>
+        <div class="search-wrapper">
+            <form method="POST">
+                <input type="text" name="search-term" placeholder="Zoektermen ingeven">
+                <input type="submit" class="search-button" value="Zoeken"/>
+            </form>
+            <div class="amount-of-results">
+                <?php echo count($products); ?> Producten | Toon
+                <select class="" name="amount-to-show">
+                    <option value="20" selected>20</option>
+                    <option value="20">40</option>
+                    <option value="20">60</option>
+                    <option value="20">80</option>
+                </select>
+            </div>
+        </div>
 
-    <div class="amount-of-results">
-        <?php echo count($products); ?> Producten | Toon
-        <select class="" name="amount-to-show">
-            <option value="20" selected>20</option>
-            <option value="20">40</option>
-            <option value="20">60</option>
-            <option value="20">80</option>
-        </select>
-    </div>
 
+    </div>
 
     <div class="main-section">
 
