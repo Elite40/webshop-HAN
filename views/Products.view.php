@@ -17,6 +17,7 @@ $cartController = new CartController();
 
 $products = $productController->getAllProducts();
 $categories = $categoryController->getAllCategories();
+$categories[] = 'Alles';
 
 if ($cat !== null) {
     $products = [];
@@ -41,7 +42,7 @@ if (isset($_POST['add-to-cart'])) {
     </div>
 
     <div class="amount-of-results">
-        1367 Producten | Toon
+        <?php echo count($products); ?> Producten | Toon
         <select class="" name="amount-to-show">
             <option value="20" selected>20</option>
             <option value="20">40</option>

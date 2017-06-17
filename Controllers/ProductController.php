@@ -43,7 +43,8 @@ class ProductController
      */
     public function getProductsByCategory($category)
     {
-        $stmt = $this->db->prepare("select * from " .$this->table . " where CATEGORIE=:cat");
+        $query = ($category == 'Alles') ? "select * from " .$this->table : "select * from " .$this->table . " where CATEGORIE=:cat";
+        $stmt = $this->db->prepare($query);
         $stmt->bindParam(":cat", $category);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
 

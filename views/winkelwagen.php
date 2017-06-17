@@ -24,6 +24,11 @@ if (isset($_POST['remove-from-cart'])) {
     $cart = array_map("unserialize", array_unique(array_map("serialize", $cartController->getCart())));
 }
 
+if (isset($_POST['checkout-cart'])) {
+    $cart = array();
+    $cartController->emptyCart();
+}
+
 ?>
 
 <div class="winkelwagen-pagina-container">
@@ -45,7 +50,11 @@ if (isset($_POST['remove-from-cart'])) {
         </table>
 
     </div>
-    <div class="subtotal-container">
-        Subtotaal: €<?php echo $cartController->getSubTotal()?>
+    <div>
+        <div class="subtotal-container">
+            Subtotaal: €<?php echo $cartController->getSubTotal()?>
+        </div>
+        <form method="POST"><button type="submit" name="checkout-cart" value='true' >Afrekenen</button></form>
     </div>
+
 </div>

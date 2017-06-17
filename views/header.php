@@ -66,7 +66,7 @@
         <li class="menu__item">
             <a href="?page=webshop">Webshop</a>
             <ul>
-                <li><a href="#">Producten</a></li>
+                <li><a href="?page=webshop">Producten</a></li>
                 <li><a href="?page=winkelwagen">Winkelwagen</a></li>
                 <li><a href="#">Afrekenen</a></li>
             </ul>

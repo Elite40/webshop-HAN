@@ -73,7 +73,7 @@
 .main-section .browse-category {
 	flex-basis: 300px;
 	text-align: center;
-	max-height: 190px; /* TODO: Probeer hier een ander altneratief voor te vinden. */
+	max-height: 240px; /* TODO: Probeer hier een ander altneratief voor te vinden. */
 }
 
 .products {
