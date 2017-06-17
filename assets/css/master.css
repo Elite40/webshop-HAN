@@ -198,18 +198,22 @@ nav {
 	margin: 0;
 }
 
-.shop-button {
+.shop-button, .more-info-button {
 	display: inline-block;
-	width: 100%;
+	width: 50%;
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
 	background-color: #3498DB;
-	padding: 10px 40px;
+	padding: 10px 3px 10px 3px;
 }
 
-.shop-button:hover {
-	border: 1px solid #fff;
+.more-info-button {
+	float: right;
+}
+
+.shop-button:hover, .more-info-button:hover {
+	background-color: #3456DB;
 }
 
 .error-input-field {

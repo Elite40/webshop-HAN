@@ -96,7 +96,8 @@ if (isset($_POST['search-term'])) {
                 <div class="product-item--information">
                     <h3>€ <?php echo $product->PRIJS ?></h3>
                     <form method="POST">
-                        <button class="shop-button to-shoppingcart-btn" type="submit" name="add-to-cart" formmethod="post" value=<?php echo $product->PRODUCTNUMMER ?>>In Winkelwagen</button>
+                        <button class="shop-button" type="submit" name="add-to-cart" formmethod="post" value=<?php echo $product->PRODUCTNUMMER ?>>In Winkelwagen</button>
+                        <button class="more-info-button" type="submit" name="more-info" formmethod="post" value="">Meer Info</button>
                     </form>
                     <!--<a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>-->
                 </div>
