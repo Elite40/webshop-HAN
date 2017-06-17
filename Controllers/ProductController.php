@@ -65,6 +65,28 @@ class ProductController
 
     }
 
+    public function getProductsByName($name) {
+        $name = '%' . $name . '%';
+        $stmt = $this->db->prepare('select * from ' . $this->table . ' where PRODUCTNAAM LIKE :productnaam');
+        $stmt->bindParam(":productnaam", $name, PDO::PARAM_STR);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
+
+        if (!$stmt->execute()) {
+            die("Failure occured. See method: <i>" . __FUNCTION__ . "()</i>");
+        }
+
+        if ($stmt->fetch()) {
+            $this->products = [];
+            while ($products = $stmt->fetch()) {
+                $this->products[] = $products;
+            }
+        } else {
+            return array();
+        }
+
+        return $this->products;
+    }
+
     public function getProductByProductNumber($productNumber) {
         $stmt = $this->db->prepare("select * from " .$this->table . " where PRODUCTNUMMER=:productnummer");
         $stmt->bindParam(":productnummer", $productNumber, PDO::PARAM_STR);

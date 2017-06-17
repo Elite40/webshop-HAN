@@ -27,8 +27,16 @@ if ($cat !== null) {
 if (isset($_POST['add-to-cart'])) {
     if ($productController->checkStock($_POST['add-to-cart'])) {
         $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
-    } else {
-        echo "<script type='text/javascript'>alert('Dit product is op dit moment niet op voorraad.');</script>";
+    }
+}
+
+if (isset($_POST['products-by-name'])) {
+    $products = $productController->getProductsByName($_POST['products-by-name']);
+}
+
+if (isset($_POST['search-term'])) {
+    if (!empty($_POST['search-term'])) {
+        $products = $productController->getProductsByName($_POST['search-term']);
     }
 }
 
@@ -37,8 +45,10 @@ if (isset($_POST['add-to-cart'])) {
 <div class="producten-container">
 
     <div class="search-wrapper">
-        <input type="text" name="search-term" placeholder="Zoektermen ingeven">
-        <a href="#" class="search-button">Zoeken</a>
+        <form method="POST">
+            <input type="text" name="search-term" placeholder="Zoektermen ingeven">
+            <input type="submit" class="search-button" value="Zoeken"/>
+        </form>
     </div>
 
     <div class="amount-of-results">
