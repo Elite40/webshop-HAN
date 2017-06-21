@@ -88,7 +88,7 @@ $recommendations = $productController->getRecommendedItems($productNumber);
             echo '<div class="product-item">';
             ?>
             <div class="product-image-holder">
-                <img src="<?php echo 'http://' . $_SERVER["SERVER_NAME"] . '/webshop-HAN/' . $recommendation->AFBEELDING_KLEIN; ?>"
+                <img src="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/webshop-HAN/' . $recommendation->AFBEELDING_KLEIN; ?>"
                      alt="">
             </div>
             <div class="product-title-container">
