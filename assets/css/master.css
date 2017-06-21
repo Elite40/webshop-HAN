@@ -33,10 +33,9 @@ header {
 	height: 150px;
 }
 .wrapper .logo-container {
-  max-width: 500px;
-  max-height: 150px;
-  border: red 1px dashed;
-  /*display: inline-block;*/
+	max-width: 350px;
+	max-height: 150px;
+	border: 1px #d6d6d6 solid;
 }
 
 .wrapper .logo-container img{
@@ -45,7 +44,7 @@ header {
 }
 
 .wrapper .login-container {
-	border: 1px red dashed;
+	border: 1px #d6d6d6 solid;
 	width: 300px;
 }
 
@@ -278,5 +277,47 @@ nav {
 		width:0;
 		height:0;
 		visibility:hidden;
+	}
+}
+
+
+@media only screen and (max-width: 1070px) { 
+  	form > .factuuradres {
+  		margin-left: 0px;
+  		width: 100%;
+  		max-width: none;
+  	}
+
+  	.accountgegevens {
+  		width: 100%;
+  	}
+
+  	input {
+  		width: 100%;
+  	}
+
+  	div.wrapper {
+  		margin-left: 0px;
+  		width: 100%;
+  	}
+
+  	.over-ons-container {
+  		padding: 10px;
+  	}
+
+  	.search-wrapper form > .search-button {
+  		margin: 5px 0px 0px 0px;
+  	}
+
+	.product-container {
+		flex-direction: column;
+	}
+
+	.product-information .description {
+		flex-direction: column;
+	}
+
+	.description .in-stock {
+		margin-top: 40px;
 	}
 }

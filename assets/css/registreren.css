@@ -54,6 +54,7 @@
   background: #2ecc71;
   padding: 10px 40px;
   float: right;
+  border: none;
 }
 
 .save-btn:hover {

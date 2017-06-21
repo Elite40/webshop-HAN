@@ -28,6 +28,9 @@ switch ($page) {
     case 'webshop':
         $pageToLoad .= '/views/Products.view.php';
         break;
+    case 'detailpage':
+        $pageToLoad .= '/views/detailpage.view.php';
+        break;
     case 'registreren':
         $pageToLoad .= '/views/register.php';
         break;

@@ -30,6 +30,11 @@
   flex: 1;
 }
 
+.description .out-of-stock {
+  flex: 1;
+  color: red;
+}
+
 .product-image {
   max-width: 300px;
 }
@@ -42,9 +47,13 @@
 .order-amount {
   /*background: red;*/
   /*margin-left: 400px;*/
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
+.disabled {
+  pointer-events: none !important;
+  opacity: 0.4;
+}
 
 .recommendation-wrapper {
   margin-top: 30px;

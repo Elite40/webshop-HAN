@@ -115,7 +115,8 @@ class User
 
             $this->login($form['username'], $form['password']);
             if ($_SESSION['user'] === true) {
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                $destination = $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'];
+                header('Location: http://' . $destination);
             }
 
         } catch (PDOException $e) {
