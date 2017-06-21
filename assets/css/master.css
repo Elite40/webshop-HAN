@@ -324,4 +324,13 @@ nav {
 	.wrapper .login-container .login-form .remind-me {
 		width: inherit;
 	}
+
+	.producten-container > .main-section {
+		flex-direction: column;
+	}
+
+	.producten-container .main-section .products {
+		justify-content: space-between;
+		margin-left: 10px;
+	}
 }
