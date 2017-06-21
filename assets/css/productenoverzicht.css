@@ -7,6 +7,7 @@
 	display: flex;
 
 	flex-direction: column;
+	margin-left: -9px;
 }
 
 .browse-category ul {
@@ -14,20 +15,22 @@
 	padding: 0;
 	margin: 10px;
 	transition: all linear 0.1s;
-	border: 1px solid #ddd;
 }
 
-.browse-category ul li a {
+.browse-category ul a {
 	text-decoration: none;
 	color: #000;
 }
 
 .browse-category ul li {
 	padding: 10px;
+	margin-bottom: 5px;
+	border: 1px solid lightgray;
 }
 
 .browse-category ul li:hover{
-	background: yellow;
+	background: #e86937;
+	color: white;
 }
 
 .search-wrapper {

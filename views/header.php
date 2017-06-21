@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="element-holder">
-                        <input type="checkbox">Onthouden
+                        <input type="checkbox" class="remind-me">Onthouden
                         <a href="#">Vergeten?</a>
                         <a href="?page=registreren">Registreer</a>
                         <input type="submit" value="Login">

@@ -2,9 +2,14 @@
 
 class ProductController
 {
+    /** @var PDO */
     private $db;
 
+    /** @var string */
     private $table = 'product';
+
+    /** @var string */
+    private $tableRecommandation = 'product_gerelateerd_product';
 
     /** @var array */
     private $products = [];
@@ -43,7 +48,7 @@ class ProductController
      */
     public function getProductsByCategory($category)
     {
-        $query = ($category == 'Alles') ? "select * from " .$this->table : "select * from " .$this->table . " where CATEGORIE=:cat";
+        $query = ($category == 'Alles') ? "select * from " . $this->table : "select * from " . $this->table . " where CATEGORIE=:cat";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(":cat", $category);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
@@ -57,15 +62,20 @@ class ProductController
             while ($products = $stmt->fetch()) {
                 $this->products[] = $products;
             }
-        }else {
+        } else {
             die("Error occured at: " . __FUNCTION__);
         }
 
         return $this->products;
-
     }
 
-    public function getProductsByName($name) {
+    /** Finds products by name
+     *
+     * @param $name
+     * @return array
+     */
+    public function getProductsByName($name)
+    {
         $name = '%' . $name . '%';
         $stmt = $this->db->prepare('select * from ' . $this->table . ' where PRODUCTNAAM LIKE :productnaam');
         $stmt->bindParam(":productnaam", $name, PDO::PARAM_STR);
@@ -81,14 +91,21 @@ class ProductController
                 $this->products[] = $products;
             }
         } else {
-            return array();
+            return [];
         }
 
         return $this->products;
     }
 
-    public function getProductByProductNumber($productNumber) {
-        $stmt = $this->db->prepare("select * from " .$this->table . " where PRODUCTNUMMER=:productnummer");
+    /**
+     * Finds a product by its product number
+     *
+     * @param $productNumber
+     * @return mixed
+     */
+    public function getProductByProductNumber($productNumber)
+    {
+        $stmt = $this->db->prepare("select * from " . $this->table . " where PRODUCTNUMMER=:productnummer");
         $stmt->bindParam(":productnummer", $productNumber, PDO::PARAM_STR);
 
         if (!$stmt->execute()) {
@@ -96,14 +113,57 @@ class ProductController
         }
 
         $product = $stmt->fetchObject();
+
         return $product;
     }
 
-    public function checkStock($productNumber) {
+    /**
+     * Checks the stock for a specific product.
+     *
+     * @param $productNumber
+     * @return bool
+     */
+    public function checkStock($productNumber)
+    {
         $product = $this->getProductByProductNumber($productNumber);
         if ($product->VOORRAAD !== null && $product->VOORRAAD > 0) {
             return true;
         }
+
         return false;
+    }
+
+    /**
+     * Returns the recommended items based on the given productnumber.
+     * @param $productNumber
+     * @return array
+     */
+    public function getRecommendedItems($productNumber)
+    {
+        if (!is_int($productNumber)) {
+            die("Not an integer");
+        }
+        $stmt = $this->db->prepare(
+                'SELECT PRODUCTNUMMER_GERELATEERD_PRODUCT FROM ' . $this->tableRecommandation . ' where PRODUCTNUMMER = :productnumber'
+            );
+        $stmt->bindParam(':productnumber', $productNumber);
+        $stmt->execute();
+
+        if (!$stmt->execute()) {
+            die("Failure occured. see method: <i>" . __FUNCTION__ . "()</i>");
+        }
+
+        $productNumbers = [];
+        $recommendedProducts = [];
+
+        while ($results = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $productNumbers[] = (int) $results['PRODUCTNUMMER_GERELATEERD_PRODUCT'];
+        }
+
+        for($index = 0; $index < count($productNumbers); $index++) {
+            $recommendedProducts[] = $this->getProductByProductNumber($productNumbers[$index]);
+        }
+
+        return $recommendedProducts;
     }
 }

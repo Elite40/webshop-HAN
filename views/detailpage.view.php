@@ -24,6 +24,8 @@ if (null == $productNumber) {
 /** @var Product $product */
 $product = $productController->getProductByProductNumber($productNumber);
 
+$recommendations = $productController->getRecommendedItems($productNumber);
+
 ?>
 
 
@@ -41,7 +43,7 @@ $product = $productController->getProductByProductNumber($productNumber);
             <h2><?php echo $product->PRODUCTNAAM; ?></h2>
 
             <div class="price">
-                <h3>€ <?php echo $product->PRIJS;?></h3>
+                <h3>€ <?php echo $product->PRIJS; ?></h3>
             </div>
 
             <div class="description">
@@ -51,14 +53,15 @@ $product = $productController->getProductByProductNumber($productNumber);
                 <?php
                 if ($product->VOORRAAD == null) {
                     echo '<span class="out-of-stock">Niet meer op voorraad</span>';
-                }else {
-                    echo '<span class="in-stock">Op voorraad: <b>'. $product->VOORRAAD .'</b></span>';
+                } else {
+                    echo '<span class="in-stock">Op voorraad: <b>' . $product->VOORRAAD . '</b></span>';
                 }
                 ?>
 
             </div>
 
-            <div class="order-amount <?php $x = (!isset($product->VOORRAAD) ? 'disabled' : ''); echo $x;?>">
+            <div class="order-amount <?php $x = (!isset($product->VOORRAAD) ? 'disabled' : '');
+            echo $x; ?>">
                 <label>Aantal</label>
                 <select class="select-wrapper" name="amount">
                     <option value="1">1</option>
@@ -74,39 +77,44 @@ $product = $productController->getProductByProductNumber($productNumber);
 
     </div>
 
-    <div class="recommendation-wrapper">
+    <?php
+    if (count($recommendations) > 0) {
+        echo '<div class="recommendation-wrapper">';
+        echo '<h2>Aanbevolen producten</h2>';
+        echo '<div class="recommended-products">';
 
-        <div class="recommended-item">
-            <img src="http://www.auto-uitlaat.nl/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/2/1220_1.png"
-                 alt="">
-            <h2 class="recommended-item--title">Mooie uitlaat</h2>
-            <div class="recommended-item--information">
-                <h3>€100,00</h3>
-                <a href="#" class="shop-button">In winkelwagen</a>
+        /** @var Product $recommendation */
+        foreach ($recommendations as $recommendation) {
+            echo '<div class="product-item">';
+            ?>
+            <div class="product-image-holder">
+                <img src="<?php echo 'http://' . $_SERVER["SERVER_NAME"] . '/webshop-HAN/' . $recommendation->AFBEELDING_KLEIN; ?>"
+                     alt="">
             </div>
-        </div>
-
-        <div class="recommended-item">
-            <img src="http://www.auto-uitlaat.nl/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/2/1219_1.png"
-                 alt="">
-            <h2 class="recommended-item--title">Nog een mooie uitlaat</h2>
-            <div class="recommended-item--information">
-                <h3>€100,00</h3>
-                <a href="#" class="shop-button">In winkelwagen</a>
+            <div class="product-title-container">
+                <h2 class="product-item--title"><?php echo $recommendation->PRODUCTNAAM ?></h2>
             </div>
-        </div>
-
-        <div class="recommended-item">
-            <img src="http://www.auto-uitlaat.nl/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/2/1219_1.png"
-                 alt="">
-            <h2 class="recommended-item--title">Coole uitlaat!</h2>
-            <div class="recommended-item--information">
-                <h3 class="product-price">€100,00</h3>
-                <a href="#" class="shop-button">In winkelwagen</a>
+            <div class="product-item--information">
+                <h3>€ <?php echo $recommendation->PRIJS ?></h3>
+                <form method="POST">
+                    <button class="shop-button" type="submit" name="add-to-cart" formmethod="post"
+                            value=<?php echo $recommendation->PRODUCTNUMMER ?>>In Winkelwagen
+                    </button>
+                    <a class="more-info-button"
+                       href="http://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . '?page=detailpage&product=' . $recommendation->PRODUCTNUMMER ?>">Meer
+                        Info</a>
+                </form>
+                <!--<a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>-->
             </div>
-        </div>
 
-    </div>
+            <?php
+
+            echo '</div>';
+        }
+    }
+    ?>
+</div>
+</div>
 
 </div>
 

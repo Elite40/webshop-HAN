@@ -72,9 +72,11 @@ if (isset($_POST['search-term'])) {
                 if (!empty($categories)) {
                     foreach ($categories as $category) {
                         $categoryParameter = array_merge($_GET, array("cat" => $category));
+                        echo '<a href="?'. http_build_query($categoryParameter) .'">';
                         echo '<li>';
-                        echo '<a href="?'. http_build_query($categoryParameter) .'">'. $category . '</a>';
+                        echo $category;
                         echo '</li>';
+                        echo '</a>';
                     }
                 }
                 ?>
@@ -110,36 +112,6 @@ if (isset($_POST['search-term'])) {
             ?>
 
         </div>
-
-<!--       <div class="recommendation-wrapper">-->
-<!---->
-<!--                  <div class="recommended-item">-->
-<!--                    <img src="http://www.auto-uitlaat.nl/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/2/1220_1.png" alt="">-->
-<!--                    <h2 class="recommended-item--title">Mooie uitlaat</h2>-->
-<!--                    <div class="recommended-item--information">-->
-<!--                      <h3>€100,00</h3>-->
-<!--                      <a href="#" class="shop-button">In winkelwagen</a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!---->
-<!--                  <div class="recommended-item">-->
-<!--                    <img src="http://www.auto-uitlaat.nl/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/2/1219_1.png" alt="">-->
-<!--                    <h2 class="recommended-item--title">Nog een mooie uitlaat</h2>-->
-<!--                    <div class="recommended-item--information">-->
-<!--                      <h3>€100,00</h3>-->
-<!--                      <a href="#" class="shop-button">In winkelwagen</a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!---->
-<!--                  <div class="recommended-item">-->
-<!--                    <img src="http://www.auto-uitlaat.nl/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/2/1219_1.png" alt="">-->
-<!--                    <h2 class="recommended-item--title">Coole uitlaat!</h2>-->
-<!--                    <div class="recommended-item--information">-->
-<!--                      <h3 class="product-price">€100,00</h3>-->
-<!--                      <a href="#" class="shop-button">In winkelwagen</a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--       </div>-->
 
     </div>
 
