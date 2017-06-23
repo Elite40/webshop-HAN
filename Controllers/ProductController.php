@@ -169,19 +169,50 @@ class ProductController
     }
 
     /**
-     * @param int $productNumber
+     * @param $productNumber
      * @return bool
      */
     public function destroyItem($productNumber)
     {
-        $sql = "DELETE FROM `product` WHERE `PRODUCTNUMMER` = ?";
+        $sql = "DELETE FROM `product` WHERE `PRODUCTNUMMER` = :productnummer";
 
         $statement = $this->db->prepare($sql);
-        $statement->bindValue(1, $productNumber);
-        if ($statement->execute()) {
-            return true;
-        } else {
+        $statement->bindParam(":productnummer", $productNumber, PDO::PARAM_STR);
+
+//        if ($statement->execute()) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+    }
+
+    /**
+     * Updates the product item
+     * @param $item
+     * @param $values
+     * @return bool
+     */
+    public function updateItem($item, $values)
+    {
+        $stmt = $this->db->prepare("UPDATE product SET 
+                 PRODUCTNAAM =:productnaam,
+                 OMSCHRIJVING =:omschrijving, 
+                 PRIJS =:prijs, 
+                 CATEGORIE =:categorie, 
+                 VOORRAAD =:voorraad
+                 WHERE PRODUCTNUMMER=:productnummer");
+
+        $stmt->bindValue(':productnaam', $values['productnaam']);
+        $stmt->bindValue(':omschrijving', $values['omschrijving']);
+        $stmt->bindValue(':prijs', $values['prijs']);
+        $stmt->bindValue(':categorie', $values['categorie']);
+        $stmt->bindValue(':voorraad', $values['voorraad']);
+        $stmt->bindValue(':productnummer', $item);
+
+        if (!$stmt->execute()) {
             return false;
+        }else {
+            return true;
         }
     }
 }

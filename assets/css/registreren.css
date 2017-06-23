@@ -48,14 +48,7 @@
   margin-left: 10px;
 }
 
-.save-btn {
-  text-decoration: none;
-  color: white;
-  background: #2ecc71;
-  padding: 10px 40px;
-  float: right;
-  border: none;
-}
+
 
 .save-btn:hover {
   background: #27ae60;

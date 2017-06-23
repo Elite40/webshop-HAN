@@ -78,7 +78,7 @@ $products = $productController->getAllProducts();
             <td>€'. $product['PRIJS'] .'</td>
 
             <td>
-                <a href="/webshop-HAN/views/admin/edit.php?" class="edit-item-btn">Wijzig item</a>
+                <a href="/webshop-HAN/views/admin/edit.php?item='.$product['PRODUCTNUMMER'].'" class="edit-item-btn">Wijzig item</a>
                 <a href="/webshop-HAN/views/admin/destroy.php?item='.$product['PRODUCTNUMMER'].'" class="remove-item-btn">Verwijder item</a>
             </td>';
 

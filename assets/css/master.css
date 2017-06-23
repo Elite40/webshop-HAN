@@ -227,6 +227,20 @@ nav {
 	color: red;
 }
 
+.save-btn {
+	text-decoration: none;
+	color: white;
+	background: #2ecc71;
+	padding: 10px 40px;
+	float: right;
+	border: none;
+}
+
+.save-btn:hover {
+	cursor: pointer;
+	background: #1dcc54;
+}
+
 .user-already-exists {
 	-moz-animation: loginAnimation 0s ease-in 2s forwards;
 	/* Firefox */

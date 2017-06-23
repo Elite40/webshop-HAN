@@ -20,10 +20,9 @@ if ($item == null) {
     header('Location:'. $_SERVER['HTTP_REFERER']);
 }
 
-$itemDeleted = $productController->destroyItem((int)$item);
+$itemDeleted = $productController->destroyItem($item);
 
-var_dump($itemDeleted);die;
-if ($itemDeleted != null) {
+if ($itemDeleted != null || $itemDeleted == true) {
     $_SESSION['item_deleted'] = 'Product is verwijderd';
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }else {

@@ -1,4 +1,5 @@
 .admin-wrapper {
+    min-width: 600px;
     width: 100%;
     margin-left: 240px;
 }
@@ -36,4 +37,9 @@
     color: white;
     text-align: center;
     background: #cb2c43;
+}
+
+.omschrijving-edit {
+    width: 100%;
+    height: 200px;
 }
