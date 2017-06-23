@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require('init.php');
 
-$page = (isset($_GET['page']) ? strtolower($_GET['page']) : 'home');
+$page = (isset($_GET['page']) ? strtolower($_GET['page']) : 'nieuws');
 
 $pageToLoad = __DIR__;
 

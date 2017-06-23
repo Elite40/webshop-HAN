@@ -1,1 +1,1 @@
-<h2>Ook geen nieuws te vinden!</h2>
+<h2>Momenteel geen nieuws te vinden!</h2>

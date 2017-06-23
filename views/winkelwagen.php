@@ -34,7 +34,7 @@ if (isset($_POST['checkout-cart'])) {
 <div class="winkelwagen-pagina-container">
     <div class="main-section">
         <?php
-        
+
         if (count($cart) > 0) {
             echo "<table>";
 
