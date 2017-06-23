@@ -105,11 +105,13 @@ if (isset($_POST['add-to-cart'])) {
             <div class="product-item--information">
                 <h3>€ <?php echo $recommendation->PRIJS ?></h3>
                 <form method="POST">
-                    <button class="shop-button" type="submit" name="add-to-cart" formmethod="post"
+
+                    <button class="shop-button <?php $x = (!isset($recommendation->VOORRAAD) ? 'disabled' : '');
+                    echo $x; ?>" type="submit" name="add-to-cart" formmethod="post"
                             value=<?php echo $recommendation->PRODUCTNUMMER ?>>In Winkelwagen
                     </button>
                     <a class="more-info-button"
-                       href="http://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . '?page=detailpage&amp;product=' . $recommendation->PRODUCTNUMMER ?>">Meer
+                       href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['PHP_SELF'] . '?page=detailpage&product=' . $recommendation->PRODUCTNUMMER ?>">Meer
                         Info</a>
                 </form>
                 <!--<a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>-->
