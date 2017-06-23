@@ -145,21 +145,6 @@ nav {
 @media screen and (min-width: 600px) {
 }
 
-.over-ons-container {
-	/*display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: column;
-	flex-direction: column;*/
-	/*background: red;*/
-	/*max-width: 65%;*/
-}
-
 .over-ons{
 	display: -webkit-box;
 	display: -moz-box;

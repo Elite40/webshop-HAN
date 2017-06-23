@@ -68,7 +68,7 @@
             <ul>
                 <li><a href="?page=webshop">Producten</a></li>
                 <li><a href="?page=winkelwagen">Winkelwagen</a></li>
-                <li><a href="#">Afrekenen</a></li>
+                <li><a href="?page=winkelwagen">Afrekenen</a></li>
             </ul>
         </li>
     </ul>
