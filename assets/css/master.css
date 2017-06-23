@@ -18,9 +18,26 @@ html, body {
 
 	margin-left: 100px;
 
-	max-height: auto;
+	max-height: inherit;
 	width: calc(100% - 350px);
 	/*background: yellow;*/
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+}
+
+footer ul {
+	list-style: none;
+	display: block;
+	float: left;
+}
+
+footer h3 {
+	font-weight: 100;
+	margin-bottom: 0;
+	color: steelblue;
 }
 
 header {

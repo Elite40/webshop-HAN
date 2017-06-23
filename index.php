@@ -71,6 +71,8 @@ switch ($page) {
     }else {
          include_once $pageToLoad;
     }
+
+    include 'views/footer.php';
     ?>
 
 </div>

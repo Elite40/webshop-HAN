@@ -1,0 +1,1 @@
+<h2>Er zijn momenteel geen acties!</h2>
