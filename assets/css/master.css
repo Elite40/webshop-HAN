@@ -241,6 +241,11 @@ nav {
 	background: #1dcc54;
 }
 
+.ww-empty-message {
+	text-align: center;
+	width: 100%;
+}
+
 .user-already-exists {
 	-moz-animation: loginAnimation 0s ease-in 2s forwards;
 	/* Firefox */

@@ -33,21 +33,37 @@ if (isset($_POST['checkout-cart'])) {
 
 <div class="winkelwagen-pagina-container">
     <div class="main-section">
-        <table>
         <?php
+        
+        if (count($cart) > 0) {
+            echo "<table>";
+
             foreach ($cart as $product) {
-               ?>
+                ?>
                 <tr>
-                    <td class="image"><img src="<?php echo 'http://localhost:8888/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>" width="80" height="50" alt=""></td>
+                    <td class="image"><img
+                                src="<?php echo 'http://localhost:8888/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>"
+                                width="80" height="50" alt=""></td>
                     <td class="product-name"><?php echo $product->PRODUCTNAAM ?></td>
-                    <td class="product-amount">Aantal: <?php echo array_count_values(array_column($cartController->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER]?></td>
-                    <td class="product-subtotal">Prijs: €<?php echo array_count_values(array_column($cartController->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER] * $product->PRIJS ?></td>
-                    <td><form method="POST"><button class="remove-from-ww-btn" type="submit" name="remove-from-cart" value=<?php echo $product->PRODUCTNUMMER ?>>Verwijderen?</button></form></td>
+                    <td class="product-amount">
+                        Aantal: <?php echo array_count_values(array_column($cartController->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER] ?></td>
+                    <td class="product-subtotal">Prijs:
+                        €<?php echo array_count_values(array_column($cartController->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER] * $product->PRIJS ?></td>
+                    <td>
+                        <form method="POST">
+                            <button class="remove-from-ww-btn" type="submit" name="remove-from-cart"
+                                    value=<?php echo $product->PRODUCTNUMMER ?>>Verwijderen?
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 <?php
             }
+            echo "</table>";
+        } else {
+            echo "<h2 class='ww-empty-message'> Winkelwagen is leeg. </h2>";
+        }
         ?>
-        </table>
 
 
     </div>
