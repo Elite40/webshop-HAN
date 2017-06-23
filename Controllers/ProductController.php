@@ -16,6 +16,8 @@ class ProductController
 
     function __construct()
     {
+        require_once __DIR__ . "/../Database/DB.php";
+
         $this->db = DB::getInstance();
     }
 
@@ -32,7 +34,6 @@ class ProductController
         }
 
         $this->products = [];
-
         while ($results = $stmt->fetch()) {
             $this->products[] = $results;
         }
@@ -144,8 +145,8 @@ class ProductController
             die("Not an integer");
         }
         $stmt = $this->db->prepare(
-                'SELECT PRODUCTNUMMER_GERELATEERD_PRODUCT FROM ' . $this->tableRecommandation . ' where PRODUCTNUMMER = :productnumber'
-            );
+            'SELECT PRODUCTNUMMER_GERELATEERD_PRODUCT FROM ' . $this->tableRecommandation . ' where PRODUCTNUMMER = :productnumber'
+        );
         $stmt->bindParam(':productnumber', $productNumber);
         $stmt->execute();
 
@@ -157,13 +158,30 @@ class ProductController
         $recommendedProducts = [];
 
         while ($results = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $productNumbers[] = (int) $results['PRODUCTNUMMER_GERELATEERD_PRODUCT'];
+            $productNumbers[] = (int)$results['PRODUCTNUMMER_GERELATEERD_PRODUCT'];
         }
 
-        for($index = 0; $index < count($productNumbers); $index++) {
+        for ($index = 0; $index < count($productNumbers); $index++) {
             $recommendedProducts[] = $this->getProductByProductNumber($productNumbers[$index]);
         }
 
         return $recommendedProducts;
+    }
+
+    /**
+     * @param int $productNumber
+     * @return bool
+     */
+    public function destroyItem($productNumber)
+    {
+        $sql = "DELETE FROM `product` WHERE `PRODUCTNUMMER` = ?";
+
+        $statement = $this->db->prepare($sql);
+        $statement->bindValue(1, $productNumber);
+        if ($statement->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

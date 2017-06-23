@@ -2,17 +2,13 @@
 
 class DB
 {
-    private $db;
-
-    private $results;
-
     private static $_instance = null;
 
     private $config;
 
     public function __construct()
     {
-        require_once "Database/Config.php";
+        require_once __DIR__ . "/../Database/Config.php";
 
         $this->config = Config::getConfig();
     }

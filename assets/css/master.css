@@ -333,4 +333,14 @@ nav {
 		justify-content: space-between;
 		margin-left: 10px;
 	}
+
+    .main-section > .browse-category ul {
+        border: none;
+        text-align: center;
+    }
+
+    .main-section > .browse-category ul li {
+        margin-bottom: 10px;
+        border: 1px solid lightgray;
+    }
 }

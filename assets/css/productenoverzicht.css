@@ -15,6 +15,9 @@
 	padding: 0;
 	margin: 10px;
 	transition: all linear 0.1s;
+	border: 1px solid lightgray;
+	text-align: left;
+	min-width: 200px;
 }
 
 .browse-category ul a {
@@ -25,7 +28,6 @@
 .browse-category ul li {
 	padding: 10px;
 	margin-bottom: 5px;
-	border: 1px solid lightgray;
 }
 
 .browse-category ul li:hover{

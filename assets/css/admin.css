@@ -1,0 +1,39 @@
+.admin-wrapper {
+    width: 100%;
+    margin-left: 240px;
+}
+
+.edit-item-btn {
+    color: white;
+    background: steelblue;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.remove-item-btn {
+    color: white;
+    background: #cb2c43;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.admin-stock {
+    width: 50px;
+}
+
+.flash-message {
+    width: 100%;
+    padding: 10px;
+}
+
+.success {
+    color: white;
+    text-align: center;
+    background: #2abd68;
+}
+
+.error {
+    color: white;
+    text-align: center;
+    background: #cb2c43;
+}
