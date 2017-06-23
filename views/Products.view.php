@@ -72,11 +72,11 @@ if (isset($_POST['search-term'])) {
                 if (!empty($categories)) {
                     foreach ($categories as $category) {
                         $categoryParameter = array_merge($_GET, array("cat" => $category));
-                        echo '<a href="?'. http_build_query($categoryParameter) .'">';
                         echo '<li>';
+                        echo '<a href="?'. http_build_query($categoryParameter) .'">';
                         echo $category;
-                        echo '</li>';
                         echo '</a>';
+                        echo '</li>';
                     }
                 }
                 ?>

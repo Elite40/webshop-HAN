@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Winkelwagen</title>
+    <title>Wijzig product</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="../../assets/css/master.css" type="text/css">
@@ -137,6 +137,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </div>
+</body>
+</html>
 
 <?php
 

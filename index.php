@@ -44,7 +44,7 @@ switch ($page) {
 
 ?>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
     <title>...</title>
