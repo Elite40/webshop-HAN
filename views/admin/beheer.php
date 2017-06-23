@@ -8,7 +8,6 @@ error_reporting(E_ALL);
 require '../../Controllers/ProductController.php';
 require '../../Controllers/CategoryController.php';
 require '../../Controllers/CartController.php';
-require '../../helpers/functions.php';
 
 $productController = new ProductController();
 $categoryController = new CategoryController();

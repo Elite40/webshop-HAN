@@ -12,7 +12,6 @@ error_reporting(E_ALL);
 
 require_once 'Controllers/CartController.php';
 require_once 'Controllers/ProductController.php';
-require_once 'helpers/functions.php';
 require_once 'Product.php';
 
 $cartController = new CartController();
@@ -70,8 +69,10 @@ if (isset($_POST['checkout-cart'])) {
 
     <div>
         <div class="subtotal-container">
-            Subtotaal: €<?php echo $cartController->getSubTotal()?>
-            <form method="POST"><button class="checkout-button" type="submit" name="checkout-cart" value='true' >Afrekenen</button></form>
+            Subtotaal: €<?php echo $cartController->getSubTotal() ?>
+            <form method="POST">
+                <button class="checkout-button" type="submit" name="checkout-cart" value='true'>Afrekenen</button>
+            </form>
         </div>
     </div>
 

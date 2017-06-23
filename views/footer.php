@@ -14,11 +14,3 @@
         <li>In opdracht van: <br>HAN Arnhem en Nijmegen</li>
     </ul>
 </footer>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: tiesbaltissen
- * Date: 23-06-17
- * Time: 15:04
- */

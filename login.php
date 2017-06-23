@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = $_POST['wachtwoord'];
 
         $user->login($username, $password);
-    }catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo "Failed while trying to login:<br>" . $e->getMessage();
     }
 }

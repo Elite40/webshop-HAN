@@ -10,18 +10,6 @@ $error = [];
 //Form submitted
 if (isset($_POST['registreren'])) {
 
-    //To remind the input fields
-//    $_SESSION['auto-fill'] = [
-//            'username'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'voornaam'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'achternaam'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'email'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'straatnaam'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'huisnummer'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'plaats'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//            'telefoon'=> (isset($_POST['username']) ? $_POST['username'] : null),
-//    ];
-
     $_SESSION['username'] = (isset($_POST['username']) ? $_POST['username'] : null);
 
     $user = new User();

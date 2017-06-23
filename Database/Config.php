@@ -1,4 +1,5 @@
 <?php
+
 class Config
 {
     public static $config = [
@@ -9,6 +10,10 @@ class Config
         'password' => 'root',
         'charset' => 'utf8'
     ];
+
+    /**
+     * @return array
+     */
     public static function getConfig()
     {
         return self::$config;

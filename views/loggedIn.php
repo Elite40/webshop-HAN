@@ -1,4 +1,3 @@
-
 <div class="logged-in-container">
     <form action="/webshop-HAN/logout.php" method="post">
         <label>Welkom, <?php echo $_SESSION['user']->GEBRUIKERSNAAM; ?> </label>

@@ -169,6 +169,7 @@ class ProductController
     }
 
     /**
+     * Destroys the item from the database
      * @param $productNumber
      * @return bool
      */
@@ -179,11 +180,11 @@ class ProductController
         $statement = $this->db->prepare($sql);
         $statement->bindParam(":productnummer", $productNumber, PDO::PARAM_STR);
 
-//        if ($statement->execute()) {
-//            return true;
-//        } else {
-//            return false;
-//        }
+        if ($statement->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -211,7 +212,7 @@ class ProductController
 
         if (!$stmt->execute()) {
             return false;
-        }else {
+        } else {
             return true;
         }
     }

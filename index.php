@@ -35,7 +35,7 @@ switch ($page) {
         $pageToLoad .= '/views/register.php';
         break;
     case 'winkelwagen':
-        $pageToLoad .='/views/winkelwagen.php';
+        $pageToLoad .= '/views/winkelwagen.php';
         break;
     default:
         $pageToLoad .= '/views/home.php';
@@ -44,40 +44,40 @@ switch ($page) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>...</title>
-    <meta charset="utf-8">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>...</title>
+        <meta charset="utf-8">
 
-    <link rel="stylesheet" href="assets/css/master.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/ad.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/productenoverzicht.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/productpagina.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/registreren.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/winkelwagen.css" type="text/css">
-</head>
-<body>
-<?php require 'views/ad.php'; ?>
+        <link rel="stylesheet" href="assets/css/master.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/ad.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/productenoverzicht.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/productpagina.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/registreren.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/winkelwagen.css" type="text/css">
+    </head>
+    <body>
+    <?php require 'views/ad.php'; ?>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    <?php include 'views/header.php'; ?>
+        <?php include 'views/header.php'; ?>
 
-    <?php
-    if((@include $pageToLoad) === false)
-    {
-        echo "<h3> Pagina <i>" . $pageToLoad . "</i> bestaat niet </h3>";
-    }else {
-         include_once $pageToLoad;
-    }
+        <?php
 
-    include 'views/footer.php';
-    ?>
 
-</div>
+        if ((@include $pageToLoad) === false) {
+            echo "<h3> Pagina <i>" . $pageToLoad . "</i> bestaat niet </h3>";
+        } else {
+            include_once $pageToLoad;
+        }
 
-</body>
-</html>
+        include 'views/footer.php';
+        ?>
+    </div>
+
+    </body>
+    </html>
 
 <?php $pageToLoad = __DIR__; ?>

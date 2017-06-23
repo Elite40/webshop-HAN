@@ -13,8 +13,16 @@ class DB
         $this->config = Config::getConfig();
     }
 
-    public static function getInstance(){
-        if(!(isset(self::$_instance))){
+    /**
+     * Returns the database instance.
+     * If there's no instance available,
+     * it'll create one and connect it to the db.
+     *
+     * @return PDO
+     */
+    public static function getInstance()
+    {
+        if (!(isset(self::$_instance))) {
             self::$_instance = new DB;
         }
         return self::$_instance->connect();

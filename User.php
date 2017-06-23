@@ -2,23 +2,6 @@
 
 class User
 {
-    private $voornaam;
-
-    private $tussenvoegsel;
-
-    private $achternaam;
-
-    private $straatnaam;
-
-    private $huisnummer;
-
-    private $postcode;
-
-    private $woonplaats;
-
-    private $email;
-
-    private $geslacht;
 
     /** @var array Invalid form fields */
     private $errors = [];
@@ -36,7 +19,7 @@ class User
     }
 
     /**
-     * Logs the user in.
+     * Authenticates the user.
      *
      * @param $username
      * @param $password
@@ -64,12 +47,12 @@ class User
                 $_SESSION['user'] = $user;
 
                 //Redirects back to the place where he came from
-                if (empty($redirectTo))  {
+                if (empty($redirectTo)) {
                     header('Location: ' . $_SERVER['HTTP_REFERER']);
                 } else {
 
                     //Redirect to the specified page
-                    header('Location: http://localhost/webshop-HAN/index.php?page='. $redirectTo);
+                    header('Location: http://localhost/webshop-HAN/index.php?page=' . $redirectTo);
                 }
 
                 $_SESSION['cart_items'] = [];
@@ -124,7 +107,8 @@ class User
         }
     }
 
-    private function userAlreadyExists($username) {
+    private function userAlreadyExists($username)
+    {
         $stmt = $this->db->prepare("select * from GEBRUIKER where GEBRUIKERSNAAM=:username LIMIT 1");
         $stmt->bindParam("username", $username);
         $stmt->execute();
@@ -139,7 +123,7 @@ class User
             //User exists
             return true;
         }
-    } 
+    }
 
     /**
      * Validates the registration form.

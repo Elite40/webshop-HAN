@@ -8,10 +8,9 @@ error_reporting(E_ALL);
 require_once 'Controllers/ProductController.php';
 require_once 'Controllers/CategoryController.php';
 require_once 'Controllers/CartController.php';
-require_once 'helpers/functions.php';
 require_once 'Product.php';
 
-$productNumber = (isset($_GET['product']) ? (int) $_GET['product'] : null);
+$productNumber = (isset($_GET['product']) ? (int)$_GET['product'] : null);
 
 $productController = new ProductController();
 $categoryController = new CategoryController();
@@ -77,7 +76,9 @@ if (isset($_POST['add-to-cart'])) {
                     <option value="1">5</option>
                 </select>
                 <form method="POST">
-                    <button class="shop-button" type="submit" name="add-to-cart" formmethod="post" value=<?php echo $product->PRODUCTNUMMER ?>>Toevoegen aan winkelwagen</button>
+                    <button class="shop-button" type="submit" name="add-to-cart" formmethod="post"
+                            value=<?php echo $product->PRODUCTNUMMER ?>>Toevoegen aan winkelwagen
+                    </button>
                 </form>
             </div>
 

@@ -8,7 +8,6 @@ error_reporting(E_ALL);
 require '../../Controllers/ProductController.php';
 require '../../Controllers/CategoryController.php';
 require '../../Controllers/CartController.php';
-require '../../helpers/functions.php';
 
 $productController = new ProductController();
 $categoryController = new CategoryController();
@@ -36,17 +35,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             !empty($omschrijving) &&
             !empty($categorie) &&
             !empty($prijs) &&
-            !empty($voorraad)) {
+            !empty($voorraad)
+        ) {
 
             $values = [
-                    'productnaam' => $productNaam,
-                    'omschrijving' => $omschrijving,
-                    'categorie' => $categorie,
-                    'prijs' => $prijs,
-                    'voorraad' => $voorraad,
+                'productnaam' => $productNaam,
+                'omschrijving' => $omschrijving,
+                'categorie' => $categorie,
+                'prijs' => $prijs,
+                'voorraad' => $voorraad,
             ];
 
-            if($productController->updateItem($item, $values)) {
+            if ($productController->updateItem($item, $values)) {
                 $_SESSION['item-updated'] = "Item is geüpdatet";
             }
         }
@@ -55,90 +55,90 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Wijzig product</title>
-    <meta charset="utf-8">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Wijzig product</title>
+        <meta charset="utf-8">
 
-    <link rel="stylesheet" href="../../assets/css/master.css" type="text/css">
-    <link rel="stylesheet" href="../../assets/css/ad.css" type="text/css">
-    <link rel="stylesheet" href="../../assets/css/winkelwagen.css" type="text/css">
-    <link rel="stylesheet" href="../../assets/css/admin.css" type="text/css">
-</head>
-<body>
+        <link rel="stylesheet" href="../../assets/css/master.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/css/ad.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/css/winkelwagen.css" type="text/css">
+        <link rel="stylesheet" href="../../assets/css/admin.css" type="text/css">
+    </head>
+    <body>
 
-<div class="wrapper admin-wrapper">
-    <nav>
-        <ul class="menu">
-            <li class="menu__item">
-                <a href="/webshop-HAN/index.php">Ga naar website</a>
-            </li>
-            <li class="menu__item">
-                <a href="/webshop-HAN/views/admin/beheer.php">Alle producten</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="wrapper admin-wrapper">
+        <nav>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="/webshop-HAN/index.php">Ga naar website</a>
+                </li>
+                <li class="menu__item">
+                    <a href="/webshop-HAN/views/admin/beheer.php">Alle producten</a>
+                </li>
+            </ul>
+        </nav>
 
-    <div class="winkelwagen-wrapper">
-        <?php
-        if (isset($_SESSION['item-updated'])) {
-            echo '<div class="flash-message success">';
-            echo '<h3>' . $_SESSION['item-updated'] . '</h3>';
-            echo '</div>';
-        }
-        ?>
-        <h1><?php echo $product->PRODUCTNAAM ?></h1>
+        <div class="winkelwagen-wrapper">
+            <?php
+            if (isset($_SESSION['item-updated'])) {
+                echo '<div class="flash-message success">';
+                echo '<h3>' . $_SESSION['item-updated'] . '</h3>';
+                echo '</div>';
+            }
+            ?>
+            <h1><?php echo $product->PRODUCTNAAM ?></h1>
 
-        <form action="#" method="POST">
-            <div class="element-holder">
-                Naam:
-                <input type="text" name="product-name" placeholder="Productnaam"
-                       value="<?php echo $product->PRODUCTNAAM ?>">
-            </div>
-            <div class="element-holder">
-                Omschrijving
-                <textarea name="product-omschrijving" placeholder="Product omschrijving" class="omschrijving-edit">
+            <form action="#" method="POST">
+                <div class="element-holder">
+                    Naam:
+                    <input type="text" name="product-name" placeholder="Productnaam"
+                           value="<?php echo $product->PRODUCTNAAM ?>">
+                </div>
+                <div class="element-holder">
+                    Omschrijving
+                    <textarea name="product-omschrijving" placeholder="Product omschrijving" class="omschrijving-edit">
 
                     <?php echo $product->OMSCHRIJVING; ?>
 
                 </textarea>
-            </div>
+                </div>
 
-            <div class="element-holder">Categorie
-                <select name="product-categorie" id="category-selector">
-                    <?php
+                <div class="element-holder">Categorie
+                    <select name="product-categorie" id="category-selector">
+                        <?php
 
-                    foreach ($categories as $category) {
-                        if ($category == $product->CATEGORIE) {
-                            echo "<option selected>" . $category . "</option>";
-                        } else {
-                            echo "<option>" . $category . "</option>";
+                        foreach ($categories as $category) {
+                            if ($category == $product->CATEGORIE) {
+                                echo "<option selected>" . $category . "</option>";
+                            } else {
+                                echo "<option>" . $category . "</option>";
+                            }
                         }
-                    }
 
-                    ?>
-                </select>
-            </div>
+                        ?>
+                    </select>
+                </div>
 
-            <div class="element-holder">Prijs:
-                <input type="text" name="product-price" value="<?php echo $product->PRIJS; ?>">
-            </div>
+                <div class="element-holder">Prijs:
+                    <input type="text" name="product-price" value="<?php echo $product->PRIJS; ?>">
+                </div>
 
-            <div class="element-holder">
-                Voorraad:
-                <input type="text" name="product-voorraad" value="<?php echo $product->VOORRAAD; ?>">
-            </div>
+                <div class="element-holder">
+                    Voorraad:
+                    <input type="text" name="product-voorraad" value="<?php echo $product->VOORRAAD; ?>">
+                </div>
 
-            <div class="submit-btn-wrapper">
-                <input type="submit" value="Opslaan" class="save-btn" name="update-item">
-            </div>
+                <div class="submit-btn-wrapper">
+                    <input type="submit" value="Opslaan" class="save-btn" name="update-item">
+                </div>
 
-        </form>
+            </form>
+        </div>
     </div>
-</div>
-</body>
-</html>
+    </body>
+    </html>
 
 <?php
 

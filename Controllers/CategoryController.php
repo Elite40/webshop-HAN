@@ -2,10 +2,13 @@
 
 class CategoryController
 {
+    /** @var PDO  */
     private $db;
 
+    /** @var string  */
     private $table = 'categorie';
 
+    /** @var array  */
     public $categories = [];
 
     public function __construct()
@@ -13,6 +16,10 @@ class CategoryController
         $this->db = DB::getInstance();
     }
 
+    /**
+     * Returns all categories.
+     * @return array
+     */
     public function getAllCategories()
     {
         $stmt = $this->db->prepare("select * from " . $this->table);

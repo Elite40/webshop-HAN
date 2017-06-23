@@ -4,7 +4,7 @@
     if (isset($_SESSION['loginFailedMessage'])) {
         echo '
         <div class="login-failed">
-            <h3>'. $_SESSION['loginFailedMessage'] . '</h3>
+            <h3>' . $_SESSION['loginFailedMessage'] . '</h3>
         </div>
         ';
 
@@ -16,34 +16,36 @@
 
     <div class="logo-container">
         <!-- Logo komt hier -->
-        <img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/598938/580/435/m1/fpnw/wm0/auto-.jpg?1439140021&s=2b7429bf8204797b185646c7ec206a11" alt="">
+        <img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/598938/580/435/m1/fpnw/wm0/auto-.jpg?1439140021&s=2b7429bf8204797b185646c7ec206a11"
+             alt="">
     </div>
 
     <?php
 
     if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
         include 'loggedIn.php';
-    } else { $_SESSION['cart_items'] = []; ?>
+    } else {
+        $_SESSION['cart_items'] = []; ?>
 
-            <div class="login-container">
-                <form action="login.php" method="POST" class="login-form">
-                    <legend>Login</legend>
-                    <div class="element-holder">
-                        <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">
-                    </div>
-                    <div class="element-holder">
-                        <input type="password" name="wachtwoord" placeholder="swallaalla">
-                    </div>
+        <div class="login-container">
+            <form action="login.php" method="POST" class="login-form">
+                <legend>Login</legend>
+                <div class="element-holder">
+                    <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">
+                </div>
+                <div class="element-holder">
+                    <input type="password" name="wachtwoord" placeholder="swallaalla">
+                </div>
 
-                    <div class="element-holder">
-                        <input type="checkbox" class="remind-me">Onthouden
-                        <a href="#">Vergeten?</a>
-                        <a href="?page=registreren">Registreer</a>
-                        <input type="submit" value="Login">
-                    </div>
-                </form>
-            </div>
-            <?php
+                <div class="element-holder">
+                    <input type="checkbox" class="remind-me">Onthouden
+                    <a href="#">Vergeten?</a>
+                    <a href="?page=registreren">Registreer</a>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+        <?php
     }
     ?>
 

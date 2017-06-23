@@ -1,16 +1,15 @@
 <?php
 session_start();
 
-require_once 'helpers/functions.php';
 require_once 'Database/DB.php';
 
-try{
+try {
     $db = new DB();
     if (!isset($_SESSION['cart_items'])) {
         $_SESSION['cart_items'] = [];
     }
 
-}catch (PDOException $e) {
+} catch (PDOException $e) {
     echo $e->getMessage();
     exit;
 }
