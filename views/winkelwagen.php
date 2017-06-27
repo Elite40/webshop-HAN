@@ -19,7 +19,7 @@ $productController = new ProductController();
 $cart = array_map("unserialize", array_unique(array_map("serialize", $cartController->getCart())));
 
 if (isset($_POST['remove-from-cart'])) {
-    $cartController->removeFromCart($productController->getProductByProductNumber($_POST['remove-from-cart']));
+    $cartController->removeFromCart($productController->getProductByProductNumber($_POST['remove-from-cart']), false);
     $cart = array_map("unserialize", array_unique(array_map("serialize", $cartController->getCart())));
 }
 

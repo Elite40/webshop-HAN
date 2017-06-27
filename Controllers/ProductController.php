@@ -210,10 +210,6 @@ class ProductController
         $stmt->bindValue(':voorraad', $values['voorraad']);
         $stmt->bindValue(':productnummer', $item);
 
-        if (!$stmt->execute()) {
-            return false;
-        } else {
-            return true;
-        }
+        return ($stmt->execute());
     }
 }

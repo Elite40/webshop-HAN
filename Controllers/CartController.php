@@ -2,6 +2,7 @@
 
 class CartController
 {
+
     private $db;
 
     function __construct()
@@ -27,12 +28,15 @@ class CartController
         array_push($_SESSION['cart_items'], $product);
     }
 
-    public function removeFromCart($product)
+    public function removeFromCart($product, $checkout)
     {
-        foreach ($this->getCart() as $k => $v) {
-            foreach ($this->getCart()[$k] as $key => $value) {
+        if ($checkout) {
+            $this->editStock($product);
+        }
+        foreach ($this->getCart() as $index => $v) {
+            foreach ($this->getCart()[$index] as $key => $value) {
                 if ($key === "PRODUCTNUMMER" && $value == $product->PRODUCTNUMMER) {
-                    unset($_SESSION['cart_items'][$k]);
+                    unset($_SESSION['cart_items'][$index]);
                 }
             }
         }
@@ -44,7 +48,7 @@ class CartController
     public function emptyCart()
     {
         foreach ($this->getCart() as $product) {
-            $this->removeFromCart($product);
+            $this->removeFromCart($product, true);
         }
     }
 
@@ -59,5 +63,17 @@ class CartController
             $subtotal += $product->PRIJS;
         }
         return $subtotal;
+    }
+
+    public function editStock($product) {
+        $count = array_count_values(array_column($this->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER];
+        $stmt = $this->db->prepare("UPDATE product 
+              SET VOORRAAD=:voorraad 
+              WHERE PRODUCTNUMMER=:productnummer");
+
+        $stmt->bindValue(':voorraad', (int)$product->VOORRAAD - (int)$count);
+        $stmt->bindValue(':productnummer', $product->PRODUCTNUMMER);
+
+        return ($stmt->execute());
     }
 }
