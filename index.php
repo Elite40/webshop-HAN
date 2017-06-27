@@ -58,9 +58,9 @@ switch ($page) {
         <link rel="stylesheet" href="assets/css/winkelwagen.css" type="text/css">
     </head>
     <body>
-    <?php require 'views/ad.php'; ?>
 
     <div class="wrapper">
+        <?php require 'views/ad.php'; ?>
 
         <?php include 'views/header.php'; ?>
 

@@ -77,8 +77,6 @@ header {
 }
 
 nav {
-	/*max-width: 945px;*/
-	/*width: 85%;*/
 }
 
 .menu {
@@ -194,8 +192,11 @@ nav {
 
 .route-beschrijving p {
 	flex-basis: 40%;
-	/*background: blue;*/
 	margin: 0;
+}
+
+.route-beschrijving-image img{
+	width: 300px;
 }
 
 .shop-button, .more-info-button {

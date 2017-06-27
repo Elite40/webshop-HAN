@@ -1,7 +1,9 @@
 .ad-container {
-	flex: 0 150px;
+	width: 100px;
+	height: 800px;
 	order: 1;
-	background: hotpink;
+	float: right;
+	margin-left: 20px;
 }
 
 .ad-container > img {
