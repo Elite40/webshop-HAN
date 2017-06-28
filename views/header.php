@@ -16,7 +16,7 @@
 
     <div class="logo-container">
         <!-- Logo komt hier -->
-        <img src="https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/598938/580/435/m1/fpnw/wm0/auto-.jpg?1439140021&s=2b7429bf8204797b185646c7ec206a11"
+        <img src="assets/img/logo-webshop-han.jpg"
              alt="">
     </div>
 
