@@ -21,6 +21,9 @@ html, body {
 	background-color: #fff;
 	padding: 10px;
 
+	-webkit-box-shadow: -2px 12px 15px -4px rgba(0,0,0,0.66);
+	-moz-box-shadow: -2px 12px 15px -4px rgba(0,0,0,0.66);
+	box-shadow: -2px 12px 15px -4px rgba(0,0,0,0.66);
 	/*width: calc(100% - 350px);*/
 }
 
@@ -51,8 +54,8 @@ header {
 	height: 150px;
 }
 .wrapper .logo-container {
-	max-width: 350px;
-	max-height: 150px;
+	max-width: 200px;
+	max-height: 100px;
 }
 
 .wrapper .logo-container img{
@@ -61,19 +64,40 @@ header {
 }
 
 .wrapper .login-container {
-	border: 1px #d6d6d6 solid;
-	width: 300px;
+	width: 170px;
 }
 
 .wrapper .login-container{
 }
 
 .wrapper .login-container .login-form .element-holder{
-	display: inline-block;
+	display: block;
 }
 
-.wrapper .login-container .login-form .remind-me{
-	display: inline-block;
+.wrapper .login-container .login-form .element-holder > input{
+	width: 100%;
+}
+
+.wrapper .login-container .login-form .element-holder > .remind-me{
+	width: inherit;
+}
+
+.wrapper .login-container .login-form .element-holder:nth-child(3){
+	display: block;
+}
+
+.wrapper .login-container .login-form > .register-action{
+	display: block;
+}
+
+.wrapper .login-container .login-form  .login-btn  {
+	background: #2ecc71;
+	border: none;
+	padding: 5px;
+	width: 100%;
+	color: white;
+	text-transform: uppercase;
+	margin-top: 10px;
 }
 
 nav {
@@ -81,13 +105,14 @@ nav {
 
 .menu {
 	list-style-type: none;
-	padding: 0;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content:space-between;
 	background: steelblue;
 	align-items: center;
 	padding: 5px;
+	margin-left: -10px;
+	margin-right: -10px;
 	min-height: 40px;
 }
 

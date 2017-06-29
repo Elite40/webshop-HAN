@@ -39,10 +39,13 @@
 
                 <div class="element-holder">
                     <input type="checkbox" class="remind-me">Onthouden
+                </div>
+                <div class="element-holder register-action">
                     <a href="#">Vergeten?</a>
                     <a href="?page=registreren">Registreer</a>
-                    <input type="submit" value="Login">
                 </div>
+                <input type="submit" value="Inloggen" class="login-btn">
+
             </form>
         </div>
         <?php

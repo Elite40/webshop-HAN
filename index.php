@@ -60,10 +60,10 @@ switch ($page) {
     <body>
 
     <div class="wrapper">
-        <?php require 'views/ad.php'; ?>
+
 
         <?php include 'views/header.php'; ?>
-
+        <?php require 'views/ad.php'; ?>
         <?php
 
 
@@ -72,6 +72,7 @@ switch ($page) {
         } else {
             include_once $pageToLoad;
         }
+
 
         include 'views/footer.php';
         ?>
