@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     value=<?php echo $product->PRODUCTNUMMER ?>>In Winkelwagen
                             </button>
                             <a class="more-info-button"
-                               href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'] . '?page=detailpage&product=' . $product->PRODUCTNUMMER ?>">Meer
+                               href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['PHP_SELF'] . '?page=detailpage&product=' . $product->PRODUCTNUMMER ?>">Meer
                                 Info</a>
                         </form>
                         <!--<a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>-->
