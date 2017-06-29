@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+ob_start();
 
 require('init.php');
 
@@ -14,28 +15,28 @@ switch ($page) {
         $pageToLoad .= '/views/home.php';
         break;
     case 'over-ons':
-        $pageToLoad .= '/views/over-ons.php';
+        $pageToLoad .= '/views/over-ons.view.php';
         break;
     case 'acties':
         $pageToLoad .= '/views/acties.php';
         break;
     case 'vacatures':
-        $pageToLoad .= '/views/vacatures.php';
+        $pageToLoad .= '/views/vacatures.view.php';
         break;
     case 'nieuws':
-        $pageToLoad .= '/views/nieuws.php';
+        $pageToLoad .= '/views/nieuws.view.php';
         break;
     case 'webshop':
-        $pageToLoad .= '/views/Products.view.php';
+        $pageToLoad .= '/views/products.view.php';
         break;
     case 'detailpage':
         $pageToLoad .= '/views/detailpage.view.php';
         break;
     case 'registreren':
-        $pageToLoad .= '/views/register.php';
+        $pageToLoad .= '/views/register.view.php';
         break;
     case 'winkelwagen':
-        $pageToLoad .= '/views/winkelwagen.php';
+        $pageToLoad .= '/views/checkout.view.php';
         break;
     default:
         $pageToLoad .= '/views/home.php';
@@ -60,25 +61,19 @@ switch ($page) {
     <body>
 
     <div class="wrapper">
-
-
-        <?php include 'views/header.php'; ?>
-        <?php require 'views/ad.php'; ?>
         <?php
-
+        require_once 'views/header.php';
+        require_once 'views/ad.php';
 
         if ((@include $pageToLoad) === false) {
             echo "<h3> Pagina <i>" . $pageToLoad . "</i> bestaat niet </h3>";
         } else {
             include_once $pageToLoad;
         }
-
-
-        include 'views/footer.php';
+        include_once 'views/footer.php';
         ?>
     </div>
 
     </body>
     </html>
-
 <?php $pageToLoad = __DIR__; ?>

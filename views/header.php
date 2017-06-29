@@ -10,10 +10,7 @@
 
         unset($_SESSION['loginFailedMessage']);
     }
-
     ?>
-
-
     <div class="logo-container">
         <!-- Logo komt hier -->
         <img src="assets/img/logo-webshop-han.jpg"

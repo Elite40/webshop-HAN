@@ -23,19 +23,24 @@ if ($cat !== null) {
     $products = $productController->getProductsByCategory($cat);
 }
 
-if (isset($_POST['add-to-cart'])) {
-    if ($productController->checkStock($_POST['add-to-cart'])) {
-        $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
-    }
-}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_POST) {
+        if (isset($_POST['add-to-cart'])) {
+            if ($productController->checkStock($_POST['add-to-cart'])) {
+                $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
+                header('Location:index.php?page=webshop');
+            }
+        }
 
-if (isset($_POST['products-by-name'])) {
-    $products = $productController->getProductsByName($_POST['products-by-name']);
-}
+        if (isset($_POST['products-by-name'])) {
+            $products = $productController->getProductsByName($_POST['products-by-name']);
+        }
 
-if (isset($_POST['search-term'])) {
-    if (!empty($_POST['search-term'])) {
-        $products = $productController->getProductsByName($_POST['search-term']);
+        if (isset($_POST['search-term'])) {
+            if (!empty($_POST['search-term'])) {
+                $products = $productController->getProductsByName($_POST['search-term']);
+            }
+        }
     }
 }
 
@@ -97,13 +102,13 @@ if (isset($_POST['search-term'])) {
                     </div>
                     <div class="product-item--information">
                         <h3>€ <?php echo $product->PRIJS ?></h3>
-                        <form method="POST">
+                        <form method="POST" >
                             <button class="shop-button <?php $x = (!isset($product->VOORRAAD) ? 'disabled' : '');
                             echo $x; ?>" type="submit" name="add-to-cart" formmethod="post"
                                     value=<?php echo $product->PRODUCTNUMMER ?>>In Winkelwagen
                             </button>
                             <a class="more-info-button"
-                               href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['PHP_SELF'] . '?page=detailpage&product=' . $product->PRODUCTNUMMER ?>">Meer
+                               href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['REQUEST_URI'] . '?page=detailpage&product=' . $product->PRODUCTNUMMER ?>">Meer
                                 Info</a>
                         </form>
                         <!--<a href="#" class="shop-button to-shoppingcart-btn">In winkelwagen</a>-->
