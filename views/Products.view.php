@@ -98,7 +98,7 @@ if (isset($_POST['search-term'])) {
                     <div class="product-item--information">
                         <h3>€ <?php echo $product->PRIJS ?></h3>
                         <form method="POST">
-                            <button class="shop-button <?php $x = (!isset($product->VOORRAAD) ? 'disabled' : '');
+                            <button class="shop-button <?php $x = ((!isset($product->VOORRAAD) || $product->VOORRAAD <= 0 || $cartController->checkProductCount($product) >= $product->VOORRAAD) ? 'disabled' : '');
                             echo $x; ?>" type="submit" name="add-to-cart" formmethod="post"
                                     value=<?php echo $product->PRODUCTNUMMER ?>>In Winkelwagen
                             </button>

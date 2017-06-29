@@ -42,12 +42,21 @@ class CartController
         }
     }
 
+    public function checkProductCount($product) {
+        if (in_array($product->PRODUCTNUMMER, array_column($this->getCart(), 'PRODUCTNUMMER'))) {
+            return array_count_values(array_column($this->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER];
+        } else {
+            return -1;
+        }
+    }
+
     /**
      * Empties the shopping cart.
      */
     public function emptyCart()
     {
-        foreach ($this->getCart() as $product) {
+        $cart = $this->getCart();
+        foreach ($cart as $product) {
             $this->removeFromCart($product, true);
         }
     }
@@ -66,12 +75,14 @@ class CartController
     }
 
     public function editStock($product) {
-        $count = array_count_values(array_column($this->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER];
+        if ($this->checkProductCount($product) == -1) {
+            return;
+        }
         $stmt = $this->db->prepare("UPDATE product 
               SET VOORRAAD=:voorraad 
               WHERE PRODUCTNUMMER=:productnummer");
 
-        $stmt->bindValue(':voorraad', (int)$product->VOORRAAD - (int)$count);
+        $stmt->bindValue(':voorraad', (int)$product->VOORRAAD - $this->checkProductCount($product));
         $stmt->bindValue(':productnummer', $product->PRODUCTNUMMER);
 
         return ($stmt->execute());
