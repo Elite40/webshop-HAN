@@ -77,7 +77,8 @@ if (isset($_POST['add-to-cart'])) {
                 </select>
                 <form method="POST">
                     <button class="shop-button" type="submit" name="add-to-cart" formmethod="post"
-                            value=<?php echo $product->PRODUCTNUMMER ?>>Toevoegen aan winkelwagen
+                            value=<?php echo $product->PRODUCTNUMMER ?>>
+                        <img src="/webshop-HAN/assets/img/shopping-cart-large.png" alt="">
                     </button>
                 </form>
             </div>
@@ -109,7 +110,8 @@ if (isset($_POST['add-to-cart'])) {
 
                     <button class="shop-button <?php $x = (!isset($recommendation->VOORRAAD) ? 'disabled' : '');
                     echo $x; ?>" type="submit" name="add-to-cart" formmethod="post"
-                            value=<?php echo $recommendation->PRODUCTNUMMER ?>>In Winkelwagen
+                            value=<?php echo $recommendation->PRODUCTNUMMER ?>>
+                        <img src="/webshop-HAN/assets/img/shopping-cart-large.png" alt="">
                     </button>
                     <a class="more-info-button"
                        href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['PHP_SELF'] . '?page=detailpage&product=' . $recommendation->PRODUCTNUMMER ?>">Meer

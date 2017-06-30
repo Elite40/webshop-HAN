@@ -28,6 +28,7 @@ html, body {
 }
 
 footer {
+
 	display: flex;
 	justify-content: center;
 }
@@ -226,7 +227,6 @@ nav {
 
 .shop-button, .more-info-button {
 	display: inline-block;
-	width: 50%;
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
@@ -234,12 +234,31 @@ nav {
 	padding: 10px 3px 10px 3px;
 }
 
+.shop-button {
+	border: none;
+	width: 80px;
+	height: 40px;
+}
+
+.shop-button > img {
+	height: 100%;
+}
+
+button.shop-button:hover {
+	cursor: pointer;
+	background-color: #3082db;
+}
+
 .more-info-button {
+	position: absolute;
+	right: 0;
+	bottom: 0;
 	float: right;
+	width: 80px;
 }
 
 .shop-button:hover, .more-info-button:hover {
-	background-color: #3456DB;
+	background-color: #3082db;
 }
 
 .error-input-field {

@@ -21,18 +21,26 @@
 }
 
 .browse-category ul a {
+	display: block;
+	height: 100%;
+	width: 100%;
 	text-decoration: none;
 	color: #000;
+	padding: 10px;
 }
 
 .browse-category ul li {
-	padding: 10px;
-	margin-bottom: 5px;
+
 }
 
-.browse-category ul li:hover{
+.browse-category ul a:hover{
 	background: #e86937;
 	color: white;
+}
+
+
+.browse-category ul li:hover{
+
 }
 
 .search-wrapper {
@@ -71,7 +79,6 @@
 }
 
 .main-section .browse-category {
-	flex-basis: 300px;
 	text-align: center; /* TODO: Probeer hier een ander altneratief voor te vinden. */
 	margin-top: -10px;
 }
@@ -89,12 +96,13 @@
 .product-item {
 	position: relative;
 	border: 1px solid #ccc;
-	margin-right: 20px;
-	width: 200px;
-	height: 400px;
+	margin-right: 12px;
+	max-width: 200px;
+	max-height: 400px;
 	align-items: stretch;
 	margin-top: 20px;
 }
+
 
 .product-item > img {
 	width: 100%;
@@ -102,6 +110,14 @@
 
 .product-image-holder {
 	overflow: auto;
+}
+
+.product-title-container {
+	width: inherit;
+	height: 170px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .product-item--information {
