@@ -1,0 +1,38 @@
+.news-container {
+    display: flex;
+}
+.news-image {
+    position: relative;
+}
+
+.news-image img {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+}
+
+.news-title {
+    margin-bottom: 0;
+}
+
+.headline{
+    margin-bottom: 6px;
+}
+
+.headline span {
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.news-item {
+    width: 60%;
+    position: relative;
+    padding-left: 8px;
+    border-left: 3px solid gray;
+    z-index: 2;
+}
+
+.read-more-btn-container > a {
+    margin-top: 10px;
+}

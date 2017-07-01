@@ -426,4 +426,13 @@ button.shop-button:hover {
 	.route-beschrijving-image {
 		margin-top: 20px;
 	}
+
+	.news-container {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.news-item {
+		width: 100% !important;
+	}
 }
