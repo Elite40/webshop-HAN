@@ -24,7 +24,7 @@ if (isset($_POST['remove-from-cart'])) {
 }
 
 if (isset($_POST['checkout-cart'])) {
-    $cart = array();
+    $cart = [];
     $cartController->emptyCart();
 }
 
@@ -40,14 +40,19 @@ if (isset($_POST['checkout-cart'])) {
             foreach ($cart as $product) {
                 ?>
                 <tr>
-                    <td class="image"><img
-                                src="<?php echo 'http://localhost:8888/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>"
-                                width="80" height="50" alt=""></td>
+                    <td class="image">
+                        <img src="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/webshop-HAN/' . $product->AFBEELDING_KLEIN; ?>"
+                             width="80" height="50" alt="">
+                    </td>
                     <td class="product-name"><?php echo $product->PRODUCTNAAM ?></td>
                     <td class="product-amount">
-                        Aantal: <?php echo array_count_values(array_column($cartController->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER] ?></td>
+                        Aantal: <?php echo array_count_values(
+                            array_column($cartController->getCart(), 'PRODUCTNUMMER')
+                        )[$product->PRODUCTNUMMER] ?></td>
                     <td class="product-subtotal">Prijs:
-                        €<?php echo array_count_values(array_column($cartController->getCart(), 'PRODUCTNUMMER'))[$product->PRODUCTNUMMER] * $product->PRIJS ?></td>
+                        €<?php echo array_count_values(
+                                array_column($cartController->getCart(), 'PRODUCTNUMMER')
+                            )[$product->PRODUCTNUMMER] * $product->PRIJS ?></td>
                     <td>
                         <form method="POST">
                             <button class="remove-from-ww-btn" type="submit" name="remove-from-cart"
