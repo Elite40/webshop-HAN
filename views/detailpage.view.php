@@ -36,7 +36,7 @@ if (isset($_POST['add-to-cart'])) {
 
 <div class="product-pagina-container">
 
-    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="shop-button">Terug</a>
+    <a href="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/webshop-HAN/index.php?page=webshop'; ?>" class="shop-button">Terug</a>
 
     <div class="product-container">
         <div class="product-image">
