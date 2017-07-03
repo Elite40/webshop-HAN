@@ -930,4 +930,13 @@ td.image {
 	.news-item {
 		width: 100% !important;
 	}
+
+	.menu {
+		flex-direction:column;
+	}
+
+	.menu li {
+		margin: 4px;
+		width: 100%;
+	}
 }

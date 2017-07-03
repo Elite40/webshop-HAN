@@ -56,7 +56,8 @@ if (isset($_POST['add-to-cart'])) {
                     <?php echo $product->OMSCHRIJVING; ?>
                 </p>
                 <?php
-                if ($product->VOORRAAD == null) {
+
+                if ($product->VOORRAAD == null || (int)$product->VOORRAAD == 0) {
                     echo '<span class="out-of-stock">Niet meer op voorraad</span>';
                 } else {
                     echo '<span class="in-stock">Op voorraad: <b>' . $product->VOORRAAD . '</b></span>';
