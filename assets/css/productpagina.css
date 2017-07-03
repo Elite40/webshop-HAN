@@ -4,8 +4,6 @@
 }
 
 .product-container {
-  /*margin-top: 20px;*/
-  /*background: green;*/
   display: flex;
   margin-top: 20px;
 }
@@ -78,7 +76,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 
 .recommended-item img {
   width: 100%;

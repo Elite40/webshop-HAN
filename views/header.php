@@ -13,8 +13,10 @@
     ?>
     <div class="logo-container">
         <!-- Logo komt hier -->
+        <a href="<?php echo 'http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/webshop-HAN/'; ?>">
         <img src="assets/img/logo-webshop-han.jpg"
              alt="">
+        </a>
     </div>
 
     <?php

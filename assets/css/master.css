@@ -330,6 +330,501 @@ button.shop-button:hover {
 	height: 40px;
 }
 
+.ad-container {
+	width: 100px;
+	height: 800px;
+	order: 1;
+	float: right;
+	margin-left: 20px;
+}
+
+.ad-container > img {
+	width: 100%;
+	height: 100%;
+}
+
+.producten-container {
+	/*background: red;*/
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	flex-direction: column;
+	margin-left: -9px;
+}
+
+.browse-category ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 10px;
+	transition: all linear 0.1s;
+	border: 1px solid lightgray;
+	text-align: left;
+	min-width: 200px;
+}
+
+.browse-category ul a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	color: #000;
+	padding: 10px;
+}
+
+
+.browse-category ul a:hover{
+	background: #e86937;
+	color: white;
+}
+
+
+.search-wrapper {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	flex-flow: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.search-button {
+	text-decoration: none;
+	color: #fff;
+	padding: 5px;
+	margin-left: 10px;
+	background: steelblue;
+}
+
+.amount-of-results {
+	margin-left: 11vh;
+}
+
+.main-section {
+	margin-top: 20px;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	flex-direction: row;
+}
+
+.main-section .browse-category {
+	text-align: center; /* TODO: Probeer hier een ander altneratief voor te vinden. */
+	margin-top: -10px;
+}
+
+.products {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: -20px;
+}
+
+.product-item {
+	position: relative;
+	border: 1px solid #ccc;
+	margin-right: 12px;
+	max-width: 200px;
+	max-height: 400px;
+	align-items: stretch;
+	margin-top: 20px;
+}
+
+
+.product-item > img {
+	width: 100%;
+}
+
+.product-image-holder {
+	overflow: auto;
+}
+
+.product-title-container {
+	width: inherit;
+	height: 170px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.product-item--information {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.product-pagina-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.product-container {
+	display: flex;
+	margin-top: 20px;
+}
+
+.product-information {
+	margin-left: 10px;
+	flex: 1;
+}
+
+.product-information  button {
+	/** TODO:: Add margin **/
+}
+
+.description {
+	display: flex;
+}
+
+.description p {
+	margin: 0;
+	flex: 3;
+}
+
+.description .in-stock {
+	flex: 1;
+}
+
+.description .out-of-stock {
+	flex: 1;
+	color: red;
+}
+
+.product-image {
+	max-width: 300px;
+}
+
+.product-image img {
+	border: 1px solid #d6d6d6;
+	width: 100%;
+}
+
+.order-amount {
+	/*background: red;*/
+	/*margin-left: 400px;*/
+	margin-top: 40px;
+}
+
+.disabled {
+	pointer-events: none !important;
+	opacity: 0.4;
+}
+
+.recommendation-wrapper {
+	margin-top: 30px;
+	display: flex;
+	/*justify-content: center;*/
+	flex-direction:column;
+}
+
+.recommended-products {
+	display: flex;
+}
+
+.recommended-item {
+	margin: 10px;
+	border: 1px solid #ddd;
+	max-width: 250px;
+}
+
+.recommended-item--information {
+	display: flex;
+	justify-content: space-between;
+}
+
+.recommended-item img {
+	width: 100%;
+	height: 150px;
+}
+
+.registratie-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.accountgegevens {
+	border: 1px solid #ddd;
+	padding: 10px;
+	display: block;
+	float: left;
+}
+
+.factuuradres {
+	margin-left: 20px;
+	display: inline-block;
+	border: 1px solid #ddd;
+	padding: 10px;
+	max-width: 530px;
+}
+
+.form-element {
+	margin-bottom: 20px;
+}
+
+.form-element > label{
+	display: block;;
+}
+
+.one-row > .form-element{
+	display: inline-block;
+}
+
+.l-input {
+	width: 100%;
+}
+
+.m-input {
+	width: 50%;
+}
+
+.s-input {
+	width: 20%;
+}
+
+
+.huisnummer {
+	display: block;
+	margin-left: 10px;
+}
+
+
+
+.save-btn:hover {
+	background: #27ae60;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	text-align: center;
+}
+
+tr {
+	text-align: center;
+}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table {
+	width: 100%;
+}
+
+td.image {
+	max-width: 40px;
+	max-height: 80px;
+}
+
+.product-name {
+	text-decoration: solid;
+}
+
+.product-amount {
+
+}
+
+.product-subtotal {
+	font-weight:bold;
+}
+
+.winkelwagen-pagina-container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+}
+
+.winkelwagen-product-container {
+	display: flex;
+	margin-top: 20px;
+}
+
+.winkelwagen-wrapper > h1 {
+	text-align: center;
+}
+
+.product-afbeelding {
+	max-width: 120px;
+}
+
+.product-afbeelding img {
+	width: 100%;
+}
+
+.subtotal-container {
+	padding-top: 10px;
+	padding-right: 10px;
+	text-align: right;
+	display: inline-block;
+	position: relative;
+	float: right;
+}
+
+.checkout-button {
+	text-decoration: none;
+	color: #fff;
+	padding: 5px;
+	margin-left: 10px;
+	background: steelblue;
+}
+
+.remove-from-ww-btn {
+	text-decoration: solid;
+	color: #fff;
+	background-color: #D24444;
+}
+
+.news-container {
+	display: flex;
+}
+.news-image {
+	position: relative;
+}
+
+.news-image img {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+}
+
+.news-title {
+	margin-bottom: 0;
+}
+
+.headline{
+	margin-bottom: 6px;
+}
+
+.headline span {
+	text-decoration: underline;
+	font-size: 13px;
+}
+
+.news-item {
+	width: 60%;
+	position: relative;
+	padding-left: 8px;
+	border-left: 3px solid gray;
+	z-index: 2;
+}
+
+.read-more-btn-container > a {
+	margin-top: 10px;
+}
+
+
+
+.jobs-container {
+	display: flex;
+	align-items: center;
+	padding: 2rem 0;
+	flex-direction: column;
+
+}
+
+.jobs-container a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.jobs-title {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.job {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	background: #fff;
+
+	padding: 1rem;
+	color: #444;
+	border-bottom: 1px solid #e5e5e5;
+	border-left: .5rem solid #D44F23;
+}
+
+.job:hover {
+	background: #f9f9f9;
+	text-decoration: none !important;
+}
+
+.job:hover .title, .job:focus .title {
+	color: #F87D26;
+}
+
+.job > h1 {
+	font-weight: 300;
+	text-align: center;
+}
+
+.admin-wrapper {
+	min-width: 600px;
+	width: 100%;
+	margin-left: 240px;
+}
+
+.edit-item-btn {
+	color: white;
+	background: steelblue;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.remove-item-btn {
+	color: white;
+	background: #cb2c43;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.admin-stock {
+	width: 50px;
+}
+
+.flash-message {
+	width: 100%;
+	padding: 10px;
+}
+
+.success {
+	color: white;
+	text-align: center;
+	background: #2abd68;
+}
+
+.error {
+	color: white;
+	text-align: center;
+	background: #cb2c43;
+}
+
+.omschrijving-edit {
+	width: 100%;
+	height: 200px;
+}
+
 @keyframes loginAnimation {
 	to {
 		width:0;

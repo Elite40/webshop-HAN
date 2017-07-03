@@ -29,19 +29,12 @@
 	padding: 10px;
 }
 
-.browse-category ul li {
-
-}
 
 .browse-category ul a:hover{
 	background: #e86937;
 	color: white;
 }
 
-
-.browse-category ul li:hover{
-
-}
 
 .search-wrapper {
 	display: -webkit-box;

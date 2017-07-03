@@ -52,13 +52,13 @@ switch ($page) {
         <meta charset="utf-8">
 
         <link rel="stylesheet" href="assets/css/master.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/ad.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/productenoverzicht.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/productpagina.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/registreren.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/winkelwagen.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/news.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/vacatures.css" type="text/css">
+<!--        <link rel="stylesheet" href="assets/css/ad.css" type="text/css">-->
+<!--        <link rel="stylesheet" href="assets/css/productenoverzicht.css" type="text/css">-->
+<!--        <link rel="stylesheet" href="assets/css/productpagina.css" type="text/css">-->
+<!--        <link rel="stylesheet" href="assets/css/registreren.css" type="text/css">-->
+<!--        <link rel="stylesheet" href="assets/css/winkelwagen.css" type="text/css">-->
+<!--        <link rel="stylesheet" href="assets/css/news.css" type="text/css">-->
+<!--        <link rel="stylesheet" href="assets/css/vacatures.css" type="text/css">-->
     </head>
     <body>
 
