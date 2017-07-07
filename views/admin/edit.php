@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </head>
     <body>
 
-    <div class="wrapper admin-wrapper">
+    <div class="wrapper">
         <nav>
             <ul class="menu">
                 <li class="menu__item">

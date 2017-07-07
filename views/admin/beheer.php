@@ -29,7 +29,8 @@ $products = $productController->getAllProducts();
     </head>
     <body>
 
-    <div class="wrapper admin-wrapper">
+    <div class="wrapper">
+        <h1 style="color: #E0510F;">Beheeromgeving</h1>
         <nav>
             <ul class="menu">
                 <li class="menu__item">
@@ -55,7 +56,7 @@ $products = $productController->getAllProducts();
             }
             ?>
 
-            <h1>Alle producten</h1>
+            <h2>Alle producten</h2>
             <table>
                 <thead>
                 <tr>
@@ -78,7 +79,6 @@ $products = $productController->getAllProducts();
             
                         <td>
                             <a href="/webshop-HAN/views/admin/edit.php?item=' . $product['PRODUCTNUMMER'] . '" class="edit-item-btn">Wijzig item</a>
-                            <a href="/webshop-HAN/views/admin/destroy.php?item=' . $product['PRODUCTNUMMER'] . '" class="remove-item-btn">Verwijder item</a>
                         </td>';
 
                     echo '</tr>';

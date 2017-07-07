@@ -104,11 +104,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <h3>Prijs: € <?php echo $product->PRIJS ?></h3>
 
                         <form method="POST">
-                            <button class="shop-button <?php $x = ((!isset($product->VOORRAAD) || $product->VOORRAAD <= 0 || $cartController->checkProductCount($product) >= $product->VOORRAAD) ? 'disabled' : '');
-                            echo $x; ?>" type="submit" name="add-to-cart" formmethod="post"
-                                    value=<?php echo $product->PRODUCTNUMMER ?>>
-                                <img src="/webshop-HAN/assets/img/shopping-cart-large.png" alt="">
-                            </button>
+                            <?php
+
+                                if (!isset($product->VOORRAAD) || $product->VOORRAAD <= 0 || $cartController->checkProductCount($product) >= $product->VOORRAAD) {
+                                    echo '<span class="out-of-stock">Uitverkocht</span>';
+                                }else {
+                                    $button = '<button class="shop-button" type="submit" name="add-to-cart" formmethod="post"
+                                    value="'. $product->PRODUCTNUMMER . '">
+                                <img src="/webshop-HAN/assets/img/shopping-cart-large.png" alt="in winkelwagen">
+                            </button>';
+                                    echo $button;
+                                }
+?>
                             <a class="more-info-button"
                                href="http://<?php echo $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . $_SERVER['PHP_SELF'] . '?page=detailpage&product=' . $product->PRODUCTNUMMER ?>">Meer
                                 Info</a>

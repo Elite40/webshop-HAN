@@ -45,8 +45,9 @@ td.image {
   margin-top: 20px;
 }
 
-.winkelwagen-wrapper > h1 {
+.winkelwagen-wrapper > h2 {
   text-align: center;
+  border-bottom: solid 1px black;
 }
 
 .product-afbeelding {

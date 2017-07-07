@@ -235,6 +235,7 @@ nav {
 }
 
 .shop-button {
+	position: relative;
 	border: none;
 	width: 80px;
 	height: 40px;
@@ -291,16 +292,6 @@ button.shop-button:hover {
 }
 
 .user-already-exists {
-	-moz-animation: loginAnimation 0s ease-in 2s forwards;
-	/* Firefox */
-	-webkit-animation: loginAnimation 0s ease-in 2s forwards;
-	/* Safari and Chrome */
-	-o-animation: loginAnimation 0s ease-in 2s forwards;
-	/* Opera */
-	animation: loginAnimation 0s ease-in 2s forwards;
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-
 	background: red;
     text-align: center;
     color: white;
@@ -308,16 +299,6 @@ button.shop-button:hover {
 }
 
 .login-failed {
-	-moz-animation: loginAnimation 0s ease-in 2s forwards;
-	/* Firefox */
-	-webkit-animation: loginAnimation 0s ease-in 2s forwards;
-	/* Safari and Chrome */
-	-o-animation: loginAnimation 0s ease-in 2s forwards;
-	/* Opera */
-	animation: loginAnimation 0s ease-in 2s forwards;
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -496,7 +477,7 @@ button.shop-button:hover {
 	flex: 1;
 }
 
-.description .out-of-stock {
+.out-of-stock {
 	flex: 1;
 	color: red;
 }
@@ -516,9 +497,13 @@ button.shop-button:hover {
 	margin-top: 40px;
 }
 
+button[disabled=disabled], button:disabled {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+}
 .disabled {
-	pointer-events: none !important;
-	opacity: 0.4;
+
 }
 
 .recommendation-wrapper {
@@ -825,22 +810,6 @@ td.image {
 	height: 200px;
 }
 
-@keyframes loginAnimation {
-	to {
-		width:0;
-		height:0;
-		overflow:hidden;
-	}
-}
-@-webkit-keyframes loginAnimation {
-	to {
-		width:0;
-		height:0;
-		visibility:hidden;
-	}
-}
-
-
 @media only screen and (max-width: 860px) {
   	form > .factuuradres {
   		margin-left: 0px;
@@ -938,5 +907,13 @@ td.image {
 	.menu li {
 		margin: 4px;
 		width: 100%;
+	}
+	
+	.ad-container {
+		display: none;
+	}
+
+	.factuuradres {
+		margin-top: 15px;
 	}
 }
