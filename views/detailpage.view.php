@@ -88,14 +88,14 @@ if (isset($_POST['add-to-cart'])) {
                                 <img src="/webshop-HAN/assets/img/shopping-cart-large.png" alt="in winkelwagen">
                             </button>';
                         echo $button;
+                        echo '</form>';
                     }
                     ?>
-                </form>
-            </div>
 
+            </div>
         </div><!-- Einde product-information div -->
 
-    </div>
+    </div> <!-- Einde product-container -->
 
     <?php
     if (count($recommendations) > 0) {
@@ -140,6 +140,7 @@ if (isset($_POST['add-to-cart'])) {
 
             <?php
 
+            echo '</div>';
             echo '</div>';
         }
     }

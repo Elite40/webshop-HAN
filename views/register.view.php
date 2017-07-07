@@ -34,11 +34,11 @@ if (isset($_SESSION['user-already-exists'])) {
     <span></span>
 
     <div class="registratie-wrapper">
-        <form method="POST" action="">
+        <form method="POST" action="#">
             <div class="accountgegevens">
                 <h3>Accountgegevens:</h3>
                 <div class="form-element">
-                    <label for="Gebruikersnaam">Gebruikersnaam
+                    <label>Gebruikersnaam
                         <span>*</span>
                     </label>
                     <?php
@@ -57,7 +57,7 @@ if (isset($_SESSION['user-already-exists'])) {
 
                 </div>
                 <div class="form-element">
-                    <label for="Gebruikersnaam">Wachtwoord
+                    <label>Wachtwoord
                         <span>*</span>
                     </label>
                     <?php
@@ -71,7 +71,7 @@ if (isset($_SESSION['user-already-exists'])) {
 
                 </div>
                 <div class="form-element">
-                    <label for="Gebruikersnaam">Herhaal wachtwoord
+                    <label>Herhaal wachtwoord
                         <span>*</span>
                     </label>
                     <?php
@@ -88,7 +88,7 @@ if (isset($_SESSION['user-already-exists'])) {
                 <h3>Factuuradres:</h3>
                 <div class="one-row">
                     <div class="form-element">
-                        <label for="aanhef">Aanhef
+                        <label>Aanhef
                             <span>*</span>
                         </label>
                         <select name="aanhef" id="aanhef-dropdown">
@@ -102,7 +102,7 @@ if (isset($_SESSION['user-already-exists'])) {
                         ?>
                     </div>
                     <div class="form-element">
-                        <label for="Voornaam">Voornaam
+                        <label>Voornaam
                             <span>*</span>
                         </label>
                         <?php
@@ -115,12 +115,12 @@ if (isset($_SESSION['user-already-exists'])) {
                         ?>
                     </div>
                     <div class="form-element">
-                        <label for="Tussenv">Tussenv.
+                        <label>Tussenv.
                         </label>
                         <input type="text" name="tussenv" placeholder="Tussenvoegsels"/>
                     </div>
                     <div class="form-element">
-                        <label for="Achternaam">Achternaam
+                        <label>Achternaam
                             <span>*</span>
                         </label>
                         <?php
@@ -135,7 +135,7 @@ if (isset($_SESSION['user-already-exists'])) {
                 </div>
                 <!-- einde one-row -->
                 <div class="form-element">
-                    <label for="Emailadres">Emailadres
+                    <label>Emailadres
                         <span>*</span>
                     </label>
                     <?php

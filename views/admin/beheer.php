@@ -62,6 +62,7 @@ $products = $productController->getAllProducts();
                 <tr>
                     <th>Afbeelding</th>
                     <th>Productnaam</th>
+                    <th>Voorraad</th>
                     <th>Prijs</th>
                     <th>Acties</th>
                 </tr>
@@ -75,6 +76,7 @@ $products = $productController->getAllProducts();
                             <img src="http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/webshop-HAN/' . $product['AFBEELDING_KLEIN'] . '" alt="">
                         </td>
                         <td>' . $product['PRODUCTNAAM'] . '</td>
+                        <td>' . (is_null($product['VOORRAAD']) ? 0 : $product['VOORRAAD']) . '</td>
                         <td>€' . $product['PRIJS'] . '</td>
             
                         <td>

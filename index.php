@@ -61,6 +61,7 @@ switch ($page) {
         require_once 'views/ad.php';
 
         if ((@include $pageToLoad) === false) {
+
             echo "<h3> Pagina <i>" . $pageToLoad . "</i> bestaat niet </h3>";
         } else {
             include_once $pageToLoad;

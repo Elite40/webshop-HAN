@@ -28,7 +28,7 @@
 
         <div class="login-container">
             <form action="login.php" method="POST" class="login-form">
-                <legend>Login</legend>
+                <label>Login</label>
                 <div class="element-holder">
                     <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">
                 </div>
