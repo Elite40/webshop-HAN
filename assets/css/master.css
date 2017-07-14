@@ -898,3 +898,9 @@ td.image {
         margin-top: 15px;
     }
 }
+
+@media only screen and (max-width: 444px) {
+    .producten-container .main-section .products {
+        justify-content: center;
+    }
+}

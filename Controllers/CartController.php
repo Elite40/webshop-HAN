@@ -22,10 +22,13 @@ class CartController
     /**
      * Adds the product to the shoppingcart.
      * @param $product
+     * @param int $amount
      */
-    public function addToCart($product)
+    public function addToCart($product, $amount = 1)
     {
-        array_push($_SESSION['cart_items'], $product);
+        for ($x = 0; $x<$amount; $x++) {
+            array_push($_SESSION['cart_items'], $product);
+        }
     }
 
     public function removeFromCart($product, $checkout)

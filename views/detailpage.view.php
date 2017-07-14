@@ -27,7 +27,9 @@ $recommendations = $productController->getRecommendedItems($productNumber);
 
 if (isset($_POST['add-to-cart'])) {
     if ($productController->checkStock($_POST['add-to-cart'])) {
-        $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']));
+        $amount = (int) $_POST['amount'];
+        $cartController->addToCart($productController->getProductByProductNumber($_POST['add-to-cart']), $amount);
+        header("Refresh:0");
     }
 }
 
@@ -73,16 +75,20 @@ if (isset($_POST['add-to-cart'])) {
                     echo '<span class="out-of-stock">Uitverkocht</span>';
                 }else {
                     echo '
+                
+                <form method="POST">';?>
                 <label>Aantal</label>
                 <select class="select-wrapper" name="amount">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="1">5</option>
-                </select>
-                <form method="POST">';
+                    <?php
 
+                    for($y=1; $y<=(int)$product->VOORRAAD; $y++) {
+                        echo '<option value="'. $y . '">'. $y . '</option>';
+                    }
+
+                    ?>
+                </select>
+                    <br>
+                <?
                         $button = '<button class="shop-button" type="submit" name="add-to-cart" formmethod="post"
                                     value="'. $product->PRODUCTNUMMER . '">
                                 <img src="/webshop-HAN/assets/img/shopping-cart-large.png" alt="in winkelwagen">
@@ -141,9 +147,11 @@ if (isset($_POST['add-to-cart'])) {
             <?php
 
             echo '</div>';
-            echo '</div>';
         }
+        echo '</div>'; //End of recommended products
+        echo '</div>'; //End of recommendation wrapper
     }
+
     ?>
 </div>
 

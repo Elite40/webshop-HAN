@@ -21,11 +21,13 @@ $cart = array_map("unserialize", array_unique(array_map("serialize", $cartContro
 if (isset($_POST['remove-from-cart'])) {
     $cartController->removeFromCart($productController->getProductByProductNumber($_POST['remove-from-cart']), false);
     $cart = array_map("unserialize", array_unique(array_map("serialize", $cartController->getCart())));
+    header("Refresh:0");
 }
 
 if (isset($_POST['checkout-cart'])) {
     $cart = [];
     $cartController->emptyCart();
+    header("Refresh:0");
 }
 
 ?>
